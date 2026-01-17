@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Diamond Self</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --champagne: #F5F0E8;
+            --graphite: #2a2a2a;
+            --sapphire: #1a365d;
+            --gold: #8B7355;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--graphite);
+            background: var(--champagne);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--sapphire);
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            flex: 1;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .diamond-symbol {
+            font-size: 2rem;
+            color: var(--gold);
+            margin: 2rem 0;
+            text-align: center;
+            opacity: 0.6;
+        }
+        
+        .intro {
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .contact-box {
+            background: var(--white);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .contact-item {
+            margin: 2rem 0;
+        }
+        
+        .contact-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--sapphire);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-value {
+            font-size: 1.25rem;
+            color: var(--graphite);
+        }
+        
+        .contact-value a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+        
+        .response-note {
+            font-size: 0.875rem;
+            color: #666;
+            margin-top: 3rem;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        footer {
+            background: var(--graphite);
+            color: #999;
+            padding: 3rem 2rem 2rem;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        footer a:hover {
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/index.html" class="back-link">← Back to Home</a>
+        
+        <h1>Contact</h1>
+        
+        <div class="diamond-symbol">◆</div>
+        
+        <p class="intro">
+            For questions about products, orders, or general inquiries, reach out through the following channels.
+        </p>
+        
+        <div class="contact-box">
+            <div class="contact-item">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                    <a href="mailto:hello@diamondself.co">hello@diamondself.com</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-label">Business Name</div>
+                <div class="contact-value">
+                    Diamond Self
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-label">Legal Entity</div>
+                <div class="contact-value">
+                    Vlada Vinogradova
+                </div>
+            </div>
+        </div>
+        
+        <p class="response-note">
+            We typically respond within 24-48 hours during business days.
+        </p>
+    </div>
+    
+    <footer>
+        <div>
+            <a href="/index.html">Home</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/terms.html">Terms</a>
+            <a href="/legal.html">Legal Info</a>
+        </div>
+        <div style="margin-top: 1.5rem; color: #666; font-size: 0.75rem;">
+            © 2025 Diamond Self. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

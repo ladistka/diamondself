@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Information — Diamond Self</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+    <link rel="apple-touch-icon" href="/favicon-512.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --champagne: #F5F0E8;
+            --graphite: #2a2a2a;
+            --sapphire: #1a365d;
+            --gold: #8B7355;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--graphite);
+            background: var(--champagne);
+        }
+        
+        h1, h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--sapphire);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--sapphire);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .legal-block {
+            background: var(--white);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 3px solid var(--gold);
+        }
+        
+        .legal-row {
+            display: flex;
+            margin: 0.75rem 0;
+            gap: 1rem;
+        }
+        
+        .legal-label {
+            font-weight: 500;
+            min-width: 180px;
+            color: var(--sapphire);
+        }
+        
+        .legal-value {
+            flex: 1;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        footer {
+            background: var(--graphite);
+            color: #999;
+            padding: 3rem 2rem 2rem;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        footer a:hover {
+            color: var(--white);
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .legal-row {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+            
+            .legal-label {
+                min-width: auto;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/index.html" class="back-link">← Back to Home</a>
+        
+        <h1>Legal Information</h1>
+        
+        <div class="legal-block">
+            <h2>Business Registration</h2>
+            
+            <div class="legal-row">
+                <div class="legal-label">Business Name:</div>
+                <div class="legal-value">Diamond Self</div>
+            </div>
+            
+            <div class="legal-row">
+                <div class="legal-label">Legal Entity:</div>
+                <div class="legal-value">Виноградова Влада Валерьевна</div>
+            </div>
+            
+            <div class="legal-row">
+                <div class="legal-label">Tax ID (ИНН):</div>
+                <div class="legal-value">773670145988</div>
+            </div>
+            
+            <div class="legal-row">
+                <div class="legal-value"></div>
+            </div>
+            
+            <div class="legal-row">
+                <div class="legal-label">Registration Address:</div>
+                <div class="legal-value">Москва, Университетский проспект д. 21 к 4 кв 8</div>
+            </div>
+        </div>
+        
+        <div class="legal-block">
+            <h2>Contact Information</h2>
+            
+            <div class="legal-row">
+                <div class="legal-label">Email:</div>
+                <div class="legal-value">hello@diamondself.co</div>
+            </div>
+            
+            <div class="legal-row">
+                <div class="legal-label">Website:</div>
+                <div class="legal-value">www.diamondself.co</div>
+            </div>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.875rem; color: #666;">
+            This information is provided in accordance with Russian Federal Law No. 2300-1 "On Protection of Consumer Rights" and Federal Law No. 381-FZ "On the Basics of State Regulation of Trading Activity in the Russian Federation."
+        </p>
+    </div>
+    
+    <footer>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="legal.html">Legal Information</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div style="margin-top: 1.5rem; color: #666; font-size: 0.75rem;">
+            © 2026 Diamond Self. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

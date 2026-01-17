@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Relationships — Архитектура Осознанных Отношений</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+    <link rel="apple-touch-icon" href="/favicon-512.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --champagne: #F5F0E8;
+            --sapphire: #1a365d;
+            --gold: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #8B7355 100%);
+            --graphite: #2C3E50;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--graphite);
+            background-color: var(--white);
+            line-height: 1.8;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.2; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+        /* ════════════════ HERO ════════════════ */
+        .hero {
+            background: var(--champagne);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-label { letter-spacing: 0.4em; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 2rem; color: var(--gold); }
+        h1 { font-size: clamp(3rem, 8vw, 5.5rem); margin-bottom: 1rem; color: var(--sapphire); }
+        .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.8rem; margin-bottom: 3rem; }
+        
+        /* ════════════════ SECTIONS ════════════════ */
+        section { padding: 8rem 0; }
+        .luxury-card { background: var(--white); padding: 4rem; border-radius: 2px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-left: 4px solid var(--gold); }
+        
+        h2 { font-size: 3rem; margin-bottom: 2.5rem; color: var(--sapphire); }
+        p { margin-bottom: 2rem; }
+
+        .pull-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-style: italic;
+            text-align: center;
+            color: var(--gold);
+            padding: 4rem 0;
+            border-top: 1px solid var(--champagne);
+            border-bottom: 1px solid var(--champagne);
+            margin: 4rem 0;
+        }
+
+        /* ════════════════ PHASES ════════════════ */
+        .phase { margin-bottom: 4rem; position: relative; padding-left: 3rem; }
+        .phase::before { content: '◆'; position: absolute; left: 0; color: var(--gold); font-size: 1.5rem; }
+        .phase-name { font-weight: 600; color: var(--sapphire); font-size: 1.4rem; margin-bottom: 0.5rem; }
+
+        /* ════════════════ SYLLABUS ════════════════ */
+        .syllabus-section { background: var(--champagne); }
+        .module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .module-card {
+            background: var(--white);
+            padding: 2rem;
+            border-left: 3px solid var(--gold);
+            transition: transform 0.3s ease;
+        }
+        .module-card:hover { transform: translateX(5px); }
+        .module-number { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+        .module-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--sapphire); margin-bottom: 0.5rem; }
+        .module-desc { font-size: 0.9rem; line-height: 1.6; color: #666; }
+
+        /* ════════════════ CREATOR BIO ════════════════ */
+        .creator-section { background: var(--white); }
+        .creator-content { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
+        .creator-photo { width: 200px; height: 200px; background: var(--champagne); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--gold); }
+        .creator-text h3 { margin-bottom: 1rem; font-size: 2rem; }
+
+        /* ════════════════ CTA SECTION ════════════════ */
+        .cta-section {
+            background: var(--sapphire);
+            color: var(--white);
+            text-align: center;
+            padding: 10rem 2rem;
+        }
+        .price {
+            font-size: 4.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1.5rem 4rem;
+            background: var(--gold-gradient);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        .cta-button:hover { transform: translateY(-5px); }
+
+        /* ════════════════ FOOTER ════════════════ */
+        footer { background: #1a1a1a; color: #888; padding: 6rem 2rem 3rem; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 4rem; border-bottom: 1px solid #333; padding-bottom: 4rem; }
+        .footer-brand { font-family: 'Cormorant Garamond', serif; color: var(--white); font-size: 1.8rem; margin-bottom: 1rem; }
+        .footer-nav a { color: #888; text-decoration: none; display: block; margin-bottom: 0.8rem; transition: color 0.3s; }
+        .footer-nav a:hover { color: var(--gold); }
+        .legal-box { text-align: center; font-size: 0.75rem; color: #555; line-height: 2; }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .luxury-card { padding: 2rem; }
+            .creator-content { grid-template-columns: 1fr; text-align: center; }
+            .creator-photo { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="brand-label">Diamond Self</div>
+        <h1>Diamond Relationships</h1>
+        <div class="hero-subtitle">Архитектура Осознанных Отношений</div>
+        <div style="font-size: 2rem; color: var(--gold);">◆</div>
+    </div>
+
+    <div class="container">
+        <section>
+            <div class="luxury-card">
+                <p style="font-size: 1.4rem; font-style: italic; color: var(--gold); margin-bottom: 3rem;">Отношения не находят. Их создают.</p>
+                <p>Не через надежду, удачу или ожидание «того самого» человека. Через точность. Через понимание архитектуры того, что делает партнёрство устойчивым.</p>
+                <p>Большинство людей подходят к отношениям так, будто ясность придёт сама собой через опыт. Это не так. Приходит повторение паттернов — те же динамики в разных лицах, те же компромиссы под новыми именами.</p>
+            </div>
+        </section>
+
+        <div class="pull-quote">Привычное — не то же самое, что подходящее.</div>
+
+        <section>
+            <h2>Механизм</h2>
+            <p>Ваша нервная система оптимизирована для выживания, а не для расширения. Она каталогизирует ранний опыт и строит паттерны распознавания на основе привычного — независимо от того, служило ли это вам.</p>
+            <p>Вот почему влечение часто ощущается как узнавание. Потому что это оно и есть. Но узнавание паттерна, а не совместимости.</p>
+            <p>Diamond Relationships — это структурная работа. Полная система для понимания унаследованных схем, прерывания бессознательных паттернов и осознанного создания отношений, а не реактивного.</p>
+        </section>
+
+        <section>
+            <h2>Три Фазы Трансформации</h2>
+            
+            <div class="phase">
+                <div class="phase-name">Фаза Первая: Фундамент</div>
+                <p>Построение самопризнания независимо от внешней валидации. Установление внутренней ценности как базовой линии, а не достижения. Выявление унаследованных схем отношений и их источников.</p>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-name">Фаза Вторая: Отбор</div>
+                <p>Тренировка распознавания паттернов для осознанного выбора партнёра. Развитие соматического интеллекта для различения тревоги и интуиции. Создание систематических фреймворков для ранней оценки и протоколов дисквалификации.</p>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-name">Фаза Третья: Архитектура</div>
+                <p>Понимание динамики привязанности и структур власти. Построение фреймворков разрешения конфликтов, которые укрепляют, а не разрушают связь. Создание долгосрочных протоколов поддержки для непрерывной калибровки.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ════════════════ SYLLABUS SECTION ════════════════ -->
+    <section class="syllabus-section">
+        <div class="container">
+            <h2>Полная Система</h2>
+            <p style="text-align: center; font-size: 1.1rem; max-width: 700px; margin: 0 auto 4rem;">12 модулей, организованных в три фазы. Каждый модуль содержит структурированные упражнения, протоколы соматической калибровки и фреймворки для принятия решений.</p>
+            
+            <div class="module-grid">
+                <div class="module-card">
+                    <div class="module-number">Модуль 01</div>
+                    <div class="module-title">Алмазное Ядро</div>
+                    <div class="module-desc">Построение внутренней ценности через доказательства, а не через внешнее подтверждение.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 02</div>
+                    <div class="module-title">Карта Желаемого</div>
+                    <div class="module-desc">Определение условий, в которых вы раскрываетесь, а не закрываетесь.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 03</div>
+                    <div class="module-title">Прерывание Паттерна</div>
+                    <div class="module-desc">Распознавание и остановка унаследованных сценариев отношений.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 04</div>
+                    <div class="module-title">Код Узнавания</div>
+                    <div class="module-desc">Тренировка распознавания для осознанного выбора партнёра.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 05</div>
+                    <div class="module-title">Зелёный Свет</div>
+                    <div class="module-desc">Систематическая оценка на ранних стадиях знакомства.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 06</div>
+                    <div class="module-title">Телесный Интеллект</div>
+                    <div class="module-desc">Калибровка нервной системы для точного считывания собственных сигналов.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 07</div>
+                    <div class="module-title">Дисквалификация</div>
+                    <div class="module-desc">Систематизация красных флагов и принятие решений об уходе.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 08</div>
+                    <div class="module-title">Архитектура Конфликта</div>
+                    <div class="module-desc">Структурированный подход к разногласиям, не разрушающий связь.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 09</div>
+                    <div class="module-title">Карта Привязанности</div>
+                    <div class="module-desc">Понимание вашего стиля привязанности и перепрограммирование реакций.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 10</div>
+                    <div class="module-title">Баланс Власти</div>
+                    <div class="module-desc">Распознавание и перераспределение дисбаланса в отношениях.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 11</div>
+                    <div class="module-title">Интеграция</div>
+                    <div class="module-desc">Объединение индивидуальной работы в общую архитектуру отношений.</div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">Модуль 12</div>
+                    <div class="module-title">Эволюция</div>
+                    <div class="module-desc">Долгосрочные практики для непрерывной калибровки и роста.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section>
+            <h2>Методология с AI</h2>
+            <p>Каждый модуль включает промпты для работы с Claude — для более глубокого анализа паттернов, генерации персонализированных инсайтов и синтеза рефлексии. AI здесь — партнёр для мышления, а не замена вашему собственному различению.</p>
+        </section>
+    </div>
+
+    <!-- ════════════════ CREATOR SECTION ════════════════ -->
+    <section class="creator-section">
+        <div class="container">
+            <h2>Об Авторе</h2>
+            <div class="creator-content">
+                <div class="creator-photo">◆</div>
+                <div class="creator-text">
+                    <h3>Влада Виноградова</h3>
+                    <p>Я создала эту систему, потому что сама в ней нуждалась. До Diamond Relationships я была тем человеком, который путал тревогу с химией, оставалась слишком долго там, где не стоило, и не видела собственных паттернов.</p>
+                    <p>Мне была нужна не мотивация. Мне была нужна структура. Полный чертёж для ясного видения и осознанного выбора.</p>
+                    <p style="font-style: italic; color: var(--gold); margin-top: 2rem;">Это не терапия. Это архитектура для тех, кто мыслит системами и ценит точность больше банальностей.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ CTA SECTION ════════════════ -->
+    <section class="cta-section" id="invest">
+        <div class="container">
+            <!-- Urgency Hook -->
+            <p style="font-size: 1.3rem; margin-bottom: 1rem; opacity: 0.9; font-family: 'Cormorant Garamond', serif; font-style: italic;">
+                Вопрос не в том, изменишь ли ты паттерн.
+            </p>
+            <p style="font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.9; font-family: 'Cormorant Garamond', serif; font-style: italic;">
+                А в том, сколько ещё лет ты проведёшь в нём.
+            </p>
+            
+            <h2>Начни Свою Архитектуру</h2>
+            
+            <!-- Price -->
+            <div class="price">16 745 ₽</div>
+            
+            <!-- Value Prop -->
+            <p style="margin: 0 auto 2rem; opacity: 0.8; max-width: 600px;">
+                Полный цифровой воркбук • 12 модулей • 40+ упражнений • AI-инструменты • Доступ навсегда
+            </p>
+            
+            <!-- Language Disclaimer -->
+            <div style="max-width: 600px; margin: 2rem auto; padding: 1.5rem; background: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--gold); font-size: 0.9rem; line-height: 1.7;">
+                <p style="margin-bottom: 0; opacity: 0.9;">
+                    ℹ️ <strong>Обратите внимание:</strong> Воркбук Diamond Relationships представлен на английском языке. Все упражнения, промпты и материалы — на английском.
+                </p>
+            </div>
+            
+            <!-- CTA Button -->
+            <a href="https://yourname.payform.ru" class="cta-button">Получить воркбук</a>
+            
+            <p style="margin-top: 3rem; font-size: 0.95rem; opacity: 0.7;">
+                Единоразовый платёж. Без подписок. Ваш навсегда.
+            </p>
+            
+            <p style="margin-top: 4rem; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;">
+                Не самопомощь. Ясность о себе.
+            </p>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Diamond Self</div>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">Архитектура осознанных отношений через структуру, точность и системное мышление.</p>
+                </div>
+                <div class="footer-nav">
+                    <a href="privacy.html">Политика конфиденциальности</a>
+                    <a href="terms-ru.html">Публичная оферта</a>
+                    <a href="legal.html">Правовая информация</a>
+                    <a href="contact.html">Контакты</a>
+                </div>
+            </div>
+            <div class="legal-box">
+                © 2026 Diamond Self. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
