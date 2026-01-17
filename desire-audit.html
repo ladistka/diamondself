@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Desire Audit – Free Download | Diamond Self</title>
+    <meta name="description" content="Distinguish true desires from social echoes. A precision tool for identifying what you actually want in relationships, career, and major life decisions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+    <link rel="apple-touch-icon" href="/favicon-512.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --champagne: #F5F0E8;
+            --sapphire: #1a365d;
+            --gold: #D4AF37;
+            --graphite: #2C3E50;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--graphite);
+            background-color: var(--white);
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        h1, h2, h3 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-weight: 600; 
+            line-height: 1.2; 
+        }
+
+        .container { 
+            max-width: 700px; 
+            margin: 0 auto; 
+            padding: 0 2rem; 
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--champagne);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .brand-label { 
+            letter-spacing: 0.4em; 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            margin-bottom: 1.5rem; 
+            color: var(--gold); 
+        }
+
+        h1 { 
+            font-size: clamp(2.5rem, 6vw, 4rem); 
+            margin-bottom: 0.5rem; 
+            color: var(--sapphire); 
+        }
+
+        .subtitle { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-style: italic; 
+            font-size: 1.4rem; 
+            margin-bottom: 2.5rem; 
+            color: var(--graphite);
+            opacity: 0.9;
+        }
+
+        .benefit {
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--gold);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .benefit strong {
+            color: var(--sapphire);
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            background: var(--white);
+            padding: 5rem 2rem;
+        }
+
+        .form-container {
+            background: var(--champagne);
+            padding: 3rem;
+            border: 3px solid var(--gold);
+            border-radius: 2px;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .form-container h2 {
+            font-size: 2rem;
+            color: var(--sapphire);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .form-container p {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* ConvertKit form will go here */
+        #convertkit-form {
+            margin: 2rem 0;
+        }
+
+        /* Default form styles (if ConvertKit hasn't loaded yet) */
+        input[type="email"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            margin: 10px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        button, .cta-button {
+            width: 100%;
+            padding: 18px;
+            background: var(--sapphire);
+            color: var(--white);
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background 0.3s ease;
+        }
+
+        button:hover, .cta-button:hover {
+            background: #0f1f3a;
+        }
+
+        /* WHAT YOU'LL DISCOVER */
+        .discover-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .discover-section h2 {
+            font-size: 2.5rem;
+            color: var(--sapphire);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .discover-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .discover-item {
+            padding: 2rem;
+            border-left: 3px solid var(--gold);
+            background: var(--champagne);
+        }
+
+        .discover-item h3 {
+            font-size: 1.3rem;
+            color: var(--sapphire);
+            margin-bottom: 0.8rem;
+        }
+
+        .discover-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* QUOTE */
+        .pull-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-style: italic;
+            text-align: center;
+            color: var(--gold);
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--champagne);
+            border-bottom: 1px solid var(--champagne);
+            margin: 4rem 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--sapphire);
+            color: var(--white);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .subtitle { font-size: 1.1rem; }
+            .form-container { padding: 2rem 1.5rem; }
+            .benefit { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="brand-label">DIAMOND SELF ARCHITECTURE</div>
+            
+            <h1>The Desire Audit</h1>
+            <p class="subtitle">Distinguishing True Desires from Social Echoes</p>
+            
+            <div class="benefit">
+                <p>Most exhaustion comes from chasing desires<br>that don't belong to you.</p>
+            </div>
+
+            <p style="max-width: 600px; margin: 2rem auto 0;">You've been taught to want security, partnership, success. But these <strong>Surface Desires</strong> promise fulfillment and leave you empty.</p>
+
+            <p style="max-width: 600px; margin: 1.5rem auto 0;"><strong style="color: var(--sapphire);">Diamond Desires are different.</strong> They feel like space, not pressure. Like coming home, not performing.</p>
+
+            <p style="max-width: 600px; margin: 1.5rem auto 0; font-size: 1.05rem;">This audit gives you a <strong>three-filter framework</strong> to distinguish between the two—in under 10 minutes.</p>
+
+            <p style="max-width: 600px; margin: 1rem auto 3rem; font-size: 1rem; color: var(--gold); font-weight: 600;">+ Includes 2 AI prompts: one for analysis, one for visualization</p>
+
+            <a href="#get-audit" style="display: inline-block; padding: 1rem 3rem; background: var(--gold); color: white; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.3s;">Get Free Audit</a>
+        </div>
+    </section>
+
+    <!-- WHAT YOU'LL DISCOVER -->
+    <section class="discover-section">
+        <div class="container">
+            <h2>What You'll Discover</h2>
+
+            <div class="discover-grid">
+                <div class="discover-item">
+                    <h3>◆ The Three-Filter Test</h3>
+                    <p>A systematic method to evaluate any desire through three precise lenses: The Justification Check, The Energy Direction, and The Audience Test.</p>
+                </div>
+
+                <div class="discover-item" style="background: linear-gradient(135deg, #F5F0E8 0%, #fff 100%); border-left: 4px solid var(--gold);">
+                    <h3>◆ Two AI Prompts (New!)</h3>
+                    <p><strong>Analysis Prompt:</strong> Reveals cognitive biases and hidden motivations. <strong>Visual Prompt:</strong> Generates a symbolic image anchor. Copy-paste ready for Claude, ChatGPT, or any AI.</p>
+                </div>
+
+                <div class="discover-item">
+                    <h3>◆ Diamond Core vs. Surface Polish</h3>
+                    <p>Learn to distinguish between desires that generate energy IN you versus those that drain energy FROM you—before you invest years pursuing the wrong blueprint.</p>
+                </div>
+
+                <div class="discover-item">
+                    <h3>◆ The Cost of Misalignment</h3>
+                    <p>Why chasing Surface Desires leads to chronic exhaustion, relationships that feel like performance, and success that feels hollow.</p>
+                </div>
+
+                <div class="discover-item">
+                    <h3>◆ Practical Application</h3>
+                    <p>A simple framework you can apply immediately to relationships, career decisions, financial choices, and major life directions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <div class="pull-quote">
+        <div class="container">
+            "Truth doesn't need witnesses.<br>Performance requires applause."
+        </div>
+    </div>
+
+    <!-- AI PROMPT PREVIEW -->
+    <section style="background: var(--white); padding: 5rem 2rem;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.2rem; color: var(--sapphire); margin-bottom: 2rem;">Two AI-Enhanced Tools Inside</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.05rem;">
+                The Desire Audit includes two custom AI prompts that take your clarity to the next level.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; max-width: 900px; margin: 0 auto;">
+                <!-- Prompt 1: Analysis -->
+                <div style="background: var(--champagne); padding: 2rem; border-left: 4px solid var(--gold);">
+                    <h3 style="font-size: 1.4rem; color: var(--sapphire); margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif;">1. The Analysis Prompt</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+                        You fill in your audit results, paste into AI, and get surgical analysis of:
+                    </p>
+                    <ul style="font-size: 0.9rem; line-height: 1.7; margin-left: 1.5rem;">
+                        <li>Cognitive biases you're blind to</li>
+                        <li>Contradictions in your reasoning</li>
+                        <li>Hidden motivations driving your choice</li>
+                        <li>What you're afraid to admit</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; font-style: italic; color: #666;">
+                        Example output: <em>"Your desire for 'stability' is actually fear of judgment disguised as pragmatism."</em>
+                    </p>
+                </div>
+
+                <!-- Prompt 2: Visual -->
+                <div style="background: var(--champagne); padding: 2rem; border-left: 4px solid var(--gold);">
+                    <h3 style="font-size: 1.4rem; color: var(--sapphire); margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif;">2. The Visual Anchor Prompt</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+                        Generate a symbolic image that represents your authentic desire. Use it as:
+                    </p>
+                    <ul style="font-size: 0.9rem; line-height: 1.7; margin-left: 1.5rem;">
+                        <li>Phone wallpaper</li>
+                        <li>Visual reminder when doubt returns</li>
+                        <li>Anchor when pressure clouds clarity</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; font-style: italic; color: #666;">
+                        Works with any AI image generator (Claude, ChatGPT, Midjourney, etc.)
+                    </p>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 2.5rem; font-size: 0.95rem; color: #666;">
+                These are just 2 of the <strong>12 AI Architecture Prompts</strong> in the full Diamond Relationships system.
+            </p>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section class="form-section" id="get-audit">
+        <div class="container">
+            <div class="form-container">
+                <h2>Get The Desire Audit</h2>
+                <p>Enter your email to receive the PDF instantly.</p>
+
+                <!-- 
+                ═══════════════════════════════════════════════════════════
+                CONVERTKIT FORM INTEGRATION
+                ═══════════════════════════════════════════════════════════
+                
+                INSTRUCTIONS:
+                1. Go to your ConvertKit account
+                2. Navigate to your form
+                3. Click "Publish" → "Embed"
+                4. Copy the HTML embed code
+                5. Paste it between the div tags below
+                6. Delete the placeholder form below
+                
+                ═══════════════════════════════════════════════════════════
+                -->
+                
+                <div id="convertkit-form">
+                    <!-- PASTE YOUR CONVERTKIT FORM CODE HERE -->
+                    
+                    <!-- PLACEHOLDER FORM (delete after adding ConvertKit) -->
+                    <form style="text-align: left;">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Send Me The Audit</button>
+                        <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem; opacity: 0.7;">
+                            No spam. Unsubscribe anytime.
+                        </p>
+                    </form>
+                    <!-- END PLACEHOLDER -->
+                </div>
+
+                <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.8; text-align: center;">
+                    After completing the audit, you'll receive a welcome series exploring how this same architecture applies to relationships, career, and every major decision.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO THIS IS FOR -->
+    <section style="background: var(--sapphire); color: var(--white); padding: 5rem 2rem;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: var(--white); margin-bottom: 2rem;">This Is For You If...</h2>
+            
+            <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+                <p style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--gold);">
+                    You're tired of justifying your choices to yourself
+                </p>
+                <p style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--gold);">
+                    You've achieved "success" but something still feels off
+                </p>
+                <p style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--gold);">
+                    You want to trust yourself again without constant second-guessing
+                </p>
+                <p style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--gold);">
+                    You're done with surface-level self-help and ready for structural clarity
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT DIAMOND SELF -->
+    <section style="background: var(--white); padding: 5rem 2rem;">
+        <div class="container" style="text-align: center;">
+            <h2 style="margin-bottom: 2rem;">About Diamond Self</h2>
+            <p style="max-width: 650px; margin: 0 auto 2rem; line-height: 1.8;">
+                Diamond Self is a systemic methodology for those who require intellectual coherence in their personal lives. Created by <strong>Vlada Vinogradova</strong>, the system combines architectural precision with AI-enhanced analysis to replace emotional guesswork with structural clarity.
+            </p>
+            <p style="max-width: 650px; margin: 0 auto 1.5rem; font-size: 0.95rem; color: #666;">
+                The full Diamond Relationships workbook includes <strong>12 AI Architecture Prompts</strong>—each designed to identify blind spots, cognitive biases, and structural flaws in your reasoning that you cannot see alone.
+            </p>
+            <p style="max-width: 650px; margin: 0 auto; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold);">
+                Not self-help. Self-clarity.
+            </p>
+
+            <div style="margin-top: 3rem;">
+                <a href="index.html" style="display: inline-block; padding: 1rem 2rem; border: 2px solid var(--sapphire); color: var(--sapphire); text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                    Explore Diamond Relationships
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-brand">DIAMOND SELF</div>
+            <p style="margin-bottom: 2rem; opacity: 0.8; font-size: 0.9rem;">
+                Systemic methodology for those who require<br>intellectual coherence in their personal life.
+            </p>
+            <div>
+                <a href="index.html">Diamond Relationships</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+                © 2026 Diamond Self. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
