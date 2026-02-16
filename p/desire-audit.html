@@ -89,17 +89,10 @@
             user-select: all;
             -webkit-user-select: all;
         }
-        .prompt-text .para {
-            margin-bottom: 12px;
-        }
-        .prompt-text .bullet {
-            padding-left: 16px;
-            text-indent: -16px;
-            margin-bottom: 8px;
-        }
-        .prompt-text .bullet:last-child {
-            margin-bottom: 0;
-        }
+        .para { margin-bottom: 12px; }
+        .hint { color: #999; font-style: italic; margin-bottom: 12px; }
+        .bullet { padding-left: 16px; text-indent: -16px; margin-bottom: 8px; }
+        .bullet:last-child { margin-bottom: 0; }
         .footer {
             margin-top: 30px;
             padding-top: 20px;
@@ -139,16 +132,16 @@
         <div id="promptBox" class="prompt-box" onclick="selectAll()">
             <div class="prompt-text" id="promptDisplay">
                 <div class="para">I just completed The Desire Audit for this desire:</div>
-                 <div class="para">    [YOUR DESIRE]</div>
+                <div class="hint">[YOUR DESIRE]</div>
                 <div class="para">Here are my results from the three filters:</div>
                 <div class="para">1. Justification Check:</div>
-                   <div class="para">  [Write: Do I need to explain why? Yes/No + thoughts]</div>
+                <div class="hint">[Do I need to explain why? Yes/No + thoughts]</div>
                 <div class="para">2. Energy Direction:</div>
-                  <div class="para">   [Write: Does this drain or energize me? + thoughts]</div>
+                <div class="hint">[Does this drain or energize me? + thoughts]</div>
                 <div class="para">3. Audience Test:</div>
-                 <div class="para">   [Write: Would I want this if no one knew? Yes/No + thoughts]</div>
-                <div class="para">Based on these results, I concluded: </div>
-                  <div class="para">   [Write your conclusion]</div>
+                <div class="hint">[Would I want this if no one knew? Yes/No + thoughts]</div>
+                <div class="para">Based on these results, I concluded:</div>
+                <div class="hint">[Write your conclusion]</div>
                 <div class="para">Now gently reflect back what I might be missing:</div>
                 <div class="bullet">• What patterns do you notice in my responses?</div>
                 <div class="bullet">• Where might I be in my own way without realizing it?</div>
@@ -165,23 +158,22 @@
     </div>
 
     <script>
-        const promptText = `I just completed The Desire Audit for this desire: [YOUR DESIRE]
+        const promptText = `I just completed The Desire Audit for this desire:
+[YOUR DESIRE]
 
 Here are my results from the three filters:
 
-1. Justification Check: 
-
-[Write: Do I need to explain why? Yes/No + thoughts]
+1. Justification Check:
+[Do I need to explain why? Yes/No + thoughts]
 
 2. Energy Direction:
-
-[Write: Does this drain or energize me? + thoughts]
+[Does this drain or energize me? + thoughts]
 
 3. Audience Test:
+[Would I want this if no one knew? Yes/No + thoughts]
 
-[Write: Would I want this if no one knew? Yes/No + thoughts]
-
-Based on these results, I concluded: [Write your conclusion]
+Based on these results, I concluded:
+[Write your conclusion]
 
 Now gently reflect back what I might be missing:
 
