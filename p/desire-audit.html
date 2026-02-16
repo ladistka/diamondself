@@ -191,7 +191,14 @@ Now gently reflect back what I might be missing:
                 copyButton.className = 'copy-button copied';
                 setTimeout(() => { showSuccess(); }, 500);
             } catch (err) {
-                copyButton.textContent = 'Try Again';
+                copyButton.textContent = 'Select & copy manually ↓';
+                const box = document.getElementById('promptBox');
+                const label = document.getElementById('toggleLabel');
+                box.classList.add('visible');
+                label.textContent = 'Hide prompt ↑';
+                setTimeout(() => {
+                    document.getElementById('promptDisplay').focus();
+                }, 100);
             }
         });
 
