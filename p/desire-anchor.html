@@ -78,15 +78,44 @@
             background: #f8f9fa;
             border-radius: 8px;
             padding: 20px;
+            cursor: text;
         }
         .prompt-box.visible { display: block; }
         .prompt-text {
-            font-size: 11px;
+            font-size: 12px;
             color: #555;
-            line-height: 1.8;
-            white-space: pre-wrap;
+            line-height: 1.9;
             font-family: 'Montserrat', sans-serif;
             user-select: all;
+            -webkit-user-select: all;
+        }
+        .para { margin-bottom: 10px; }
+        .hint { color: #999; font-style: italic; margin-bottom: 10px; }
+        .para:last-child, .hint:last-child { margin-bottom: 0; }
+        .hints {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #e8e2d6;
+            text-align: left;
+        }
+        .hints-title {
+            font-size: 11px;
+            color: #999;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        .hint-row {
+            font-size: 11px;
+            color: #aaa;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+        .hint-row span {
+            color: #888;
+            font-style: normal;
+            font-weight: 600;
         }
         .footer {
             margin-top: 30px;
@@ -123,32 +152,65 @@
         <button class="toggle-btn" onclick="togglePrompt()">
             <span id="toggleLabel">Show prompt ↓</span>
         </button>
-        <div id="promptBox" class="prompt-box">
-            <pre id="promptDisplay" class="prompt-text"></pre>
+
+        <div id="promptBox" class="prompt-box" onclick="selectAll()">
+            <div class="prompt-text" id="promptDisplay">
+                <div class="para">Create a symbolic image representing my authentic desire.</div>
+                <div class="para">The feeling is:</div>
+                <div class="hint">[describe in your own words]</div>
+                <div class="para">Visual metaphor:</div>
+                <div class="hint">[describe in your own words]</div>
+                <div class="para">Atmosphere:</div>
+                <div class="hint">[describe in your own words]</div>
+                <div class="para">Color palette:</div>
+                <div class="hint">[describe in your own words]</div>
+                <div class="para">Style: High quality, symbolic, evocative.</div>
+            </div>
+
+            <div class="hints">
+                <div class="hints-title">Not sure how to describe it? Some words to consider:</div>
+                <div class="hint-row"><span>Feeling:</span> clear, grounded, free, expansive, calm, electric, rooted, open</div>
+                <div class="hint-row"><span>Visual metaphor:</span> compass, horizon, diamond, architecture, garden, flame, ocean</div>
+                <div class="hint-row"><span>Atmosphere:</span> spacious, luminous, protected, vast, intimate, still</div>
+                <div class="hint-row"><span>Color:</span> gold, sapphire blue, champagne, ivory, deep green, rose</div>
+            </div>
         </div>
+
         <div class="footer">
             <span class="brand">Diamond Self</span> • The Desire Audit
         </div>
     </div>
 
     <script>
-        const promptText = `"Create a symbolic image representing my authentic desire.
+        const promptText = `Create a symbolic image representing my authentic desire.
 
-The feeling is: [e.g., clear and grounded / free and expansive]
+The feeling is:
+[describe in your own words]
 
-Visual metaphor: [e.g., compass pointing true / open horizon]
+Visual metaphor:
+[describe in your own words]
 
-Atmosphere: [e.g., spacious / luminous / protected]
+Atmosphere:
+[describe in your own words]
 
-Color palette: [e.g., gold, sapphire blue, champagne, white]
+Color palette:
+[describe in your own words]
 
-Style: High quality, symbolic, evocative."`;
+Style: High quality, symbolic, evocative.`;
 
         const icon = document.getElementById('icon');
         const title = document.getElementById('title');
         const message = document.getElementById('message');
         const copyButton = document.getElementById('copyButton');
-        document.getElementById('promptDisplay').textContent = promptText;
+
+        function selectAll() {
+            const el = document.getElementById('promptDisplay');
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
 
         async function tryAutoCopy() {
             try {
@@ -182,7 +244,12 @@ Style: High quality, symbolic, evocative."`;
                 copyButton.className = 'copy-button copied';
                 setTimeout(() => { showSuccess(); }, 500);
             } catch (err) {
-                copyButton.textContent = 'Try Again';
+                copyButton.textContent = 'Select & copy manually ↓';
+                const box = document.getElementById('promptBox');
+                const label = document.getElementById('toggleLabel');
+                box.classList.add('visible');
+                label.textContent = 'Hide prompt ↑';
+                setTimeout(() => { selectAll(); }, 150);
             }
         });
 
