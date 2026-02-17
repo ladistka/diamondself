@@ -91,8 +91,32 @@
         }
         .para { margin-bottom: 10px; }
         .hint { color: #999; font-style: italic; margin-bottom: 10px; }
-        .bullet { padding-left: 16px; text-indent: -16px; margin-bottom: 8px; }
         .para:last-child, .hint:last-child { margin-bottom: 0; }
+        .hints {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #e8e2d6;
+            text-align: left;
+        }
+        .hints-title {
+            font-size: 11px;
+            color: #999;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        .hint-row {
+            font-size: 11px;
+            color: #aaa;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+        .hint-row span {
+            color: #888;
+            font-style: normal;
+            font-weight: 600;
+        }
         .footer {
             margin-top: 30px;
             padding-top: 20px;
@@ -131,19 +155,18 @@
 
         <div id="promptBox" class="prompt-box" onclick="selectAll()">
             <div class="prompt-text" id="promptDisplay">
-                <div class="para">Create a high-quality coloring page of a complex, symmetrical mandala representing an architectural blueprint for openness in relationships.</div>
+                <div class="para">A high-quality coloring page of a complex, symmetrical mandala representing an architectural blueprint for openness in relationships.</div>
                 <div class="para">Incorporate:</div>
-                <div class="bullet">[Your Core Qualities from Vision Map]</div>
-                <div class="bullet">Include symbolic elements:</div>
-                <div class="bullet">[Your Symbols]</div>
-                <div class="bullet">Clean black lines on a white background, professional line art. Balance between structure and flow.</div>
-              
+                <div class="hint">[Your Core Qualities from Vision Map]</div>
+                <div class="para">Include symbolic elements:</div>
+                <div class="hint">[your symbols]</div>
+                <div class="para">Clean black lines on a white background, professional line art. Balance between structure and flow.</div>
             </div>
-                 <div class="hints">
+
+            <div class="hints">
                 <div class="hints-title">Not sure what to write? Some words to consider:</div>
-                <div class="hint-row"><span>Core Qualities: </span> emotional availability, intellectual depth, calm energy, steady presence </div>
-                <div class="hint-row"><span>Symbolic elements: </span> flowing water, open doorways, geometric foundations, pathways</div>
-             
+                <div class="hint-row"><span>Core Qualities:</span> emotional availability, intellectual depth, calm energy, steady presence</div>
+                <div class="hint-row"><span>Symbolic elements:</span> flowing water, open doorways, geometric foundations, pathways, light rays, interlocking circles</div>
             </div>
         </div>
 
@@ -153,11 +176,14 @@
     </div>
 
     <script>
-        const promptText = `Create a high-quality coloring page of a complex, symmetrical mandala representing an architectural blueprint for openness in relationships.
+        const promptText = `A high-quality coloring page of a complex, symmetrical mandala representing an architectural blueprint for openness in relationships.
+
 Incorporate:
 [Your Core Qualities from Vision Map]
+
 Include symbolic elements:
-[Your Symbols]
+[your symbols]
+
 Clean black lines on a white background, professional line art. Balance between structure and flow.`;
 
         const icon = document.getElementById('icon');
@@ -187,7 +213,7 @@ Clean black lines on a white background, professional line art. Balance between 
             icon.textContent = '✓';
             icon.className = 'icon success';
             title.textContent = 'Prompt Copied!';
-            message.innerHTML = 'The prompt is now in your clipboard.<br>Paste it into ChatGPT or Claude to continue.';
+            message.innerHTML = 'The prompt is now in your clipboard.<br>Paste it into ChatGPT, Midjourney,<br>or any AI image generator.';
             copyButton.classList.add('hidden');
         }
 
