@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Ready to Copy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .icon { font-size: 64px; margin-bottom: 20px; transition: all 0.3s ease; }
+        .icon.success { color: #D4AF37; }
+        .icon.pending { color: #0F4C81; }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .message { color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 30px; }
+        .copy-button {
+            background: #D4AF37;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        .copy-button:hover {
+            background: #c49d2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        .copy-button:active { transform: translateY(0); }
+        .copy-button.copied { background: #27ae60; }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #0F4C81;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+            margin-top: 24px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .toggle-btn:hover { opacity: 1; }
+        .prompt-box {
+            display: none;
+            margin-top: 16px;
+            text-align: left;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: text;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .prompt-box.visible { display: block; }
+        .prompt-text {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            user-select: all;
+            -webkit-user-select: all;
+        }
+        .para { margin-bottom: 10px; }
+        .hint { color: #999; font-style: italic; margin-bottom: 8px; }
+        .bullet { padding-left: 16px; text-indent: -16px; margin-bottom: 6px; }
+        .section { margin-bottom: 12px; font-weight: 600; }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 13px;
+        }
+        .brand { color: #D4AF37; font-weight: 600; }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #D4AF37;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="icon" class="icon pending">📋</div>
+        <h1 id="title">Preparing Your Prompt...</h1>
+        <p id="message" class="message">
+            <span class="loading"></span>
+            Attempting to copy automatically...
+        </p>
+        <button id="copyButton" class="copy-button hidden">Tap to Copy</button>
+        <button class="toggle-btn" onclick="togglePrompt()">
+            <span id="toggleLabel">Show prompt ↓</span>
+        </button>
+
+        <div id="promptBox" class="prompt-box" onclick="selectAll()">
+            <div class="prompt-text" id="promptDisplay">
+                <div class="para">I need help interrupting my pattern RIGHT NOW. I'm about to do something I know isn't aligned, but I feel compelled to do it anyway.</div>
+                
+                <div class="section">My Pattern (from Module 3):</div>
+                <div class="hint">[Brief description of your pattern]</div>
+                
+                <div class="section">What's Happening Right Now:</div>
+                <div class="para">The person/situation:</div>
+                <div class="hint">[Who is this? New person? Ex? Someone you know fits your pattern?]</div>
+                <div class="para">What they did/said that activated me:</div>
+                <div class="hint">[Specific trigger]</div>
+                <div class="para">What I want to do:</div>
+                <div class="hint">[What you're compelled to do]</div>
+                
+                <div class="section">My Body Right Now:</div>
+                <div class="bullet">• Physical sensations:</div>
+                <div class="hint">[racing heart, tight chest, obsessive thoughts, etc.]</div>
+                <div class="bullet">• Intensity level (1-10):</div>
+                <div class="hint">[number]</div>
+                <div class="bullet">• Can I think clearly?</div>
+                <div class="hint">[yes/no/barely]</div>
+                
+                <div class="section">What I Know Intellectually (But Am Ignoring):</div>
+                <div class="bullet">• Red flags present:</div>
+                <div class="hint">[list any]</div>
+                <div class="bullet">• This matches my pattern because:</div>
+                <div class="hint">[how it matches]</div>
+                <div class="bullet">• Last time I did this, what happened:</div>
+                <div class="hint">[outcome]</div>
+                
+                <div class="section">What I'm Telling Myself To Rationalize This:</div>
+                <div class="hint">[Your rationalizations]</div>
+                
+                <div class="section">Time Pressure I Feel:</div>
+                <div class="hint">[What urgency you're feeling]</div>
+                
+                <div class="para" style="margin-top: 12px;">Please help me:</div>
+                <div class="bullet">1. Name what's happening: Is this my pattern activating, or is this genuinely aligned?</div>
+                <div class="bullet">2. Show me what I'm not seeing: What red flags or rationalization am I engaging in right now?</div>
+                <div class="bullet">3. Remind me of the cost: Based on my pattern history, what typically happens when I act on this impulse?</div>
+                <div class="bullet">4. Give me the 48-hour protocol: What should I do RIGHT NOW instead of acting on this impulse?</div>
+                <div class="bullet">5. Provide grounding questions: What questions should I ask myself once my nervous system calms down?</div>
+                <div class="bullet">6. Be direct: If this is clearly my pattern, tell me straight: "This is your pattern. Do not act on this impulse. Here's what to do instead."</div>
+                
+                <div class="para" style="margin-top: 12px;">Be honest and kind. I need the truth—but I need it delivered with care, not coldness. I'm in a vulnerable state right now and need firm, compassionate guidance.</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span class="brand">Diamond Self</span> • Conscious Choice
+        </div>
+    </div>
+
+    <script>
+        const promptText = `I need help interrupting my pattern RIGHT NOW. I'm about to do something I know isn't aligned, but I feel compelled to do it anyway.
+
+My Pattern (from Module 3):
+[Brief description of your pattern]
+
+What's Happening Right Now:
+
+The person/situation:
+[Who is this? New person? Ex? Someone you know fits your pattern?]
+
+What they did/said that activated me:
+[Specific trigger]
+
+What I want to do:
+[What you're compelled to do]
+
+My Body Right Now:
+
+• Physical sensations:
+[racing heart, tight chest, obsessive thoughts, etc.]
+
+• Intensity level (1-10):
+[number]
+
+• Can I think clearly?
+[yes/no/barely]
+
+What I Know Intellectually (But Am Ignoring):
+
+• Red flags present:
+[list any]
+
+• This matches my pattern because:
+[how it matches]
+
+• Last time I did this, what happened:
+[outcome]
+
+What I'm Telling Myself To Rationalize This:
+[Your rationalizations]
+
+Time Pressure I Feel:
+[What urgency you're feeling]
+
+Please help me:
+
+1. Name what's happening: Is this my pattern activating, or is this genuinely aligned?
+2. Show me what I'm not seeing: What red flags or rationalization am I engaging in right now?
+3. Remind me of the cost: Based on my pattern history, what typically happens when I act on this impulse?
+4. Give me the 48-hour protocol: What should I do RIGHT NOW instead of acting on this impulse?
+5. Provide grounding questions: What questions should I ask myself once my nervous system calms down?
+6. Be direct: If this is clearly my pattern, tell me straight: "This is your pattern. Do not act on this impulse. Here's what to do instead."
+
+Be honest and kind. I need the truth—but I need it delivered with care, not coldness. I'm in a vulnerable state right now and need firm, compassionate guidance.`;
+
+        const icon = document.getElementById('icon');
+        const title = document.getElementById('title');
+        const message = document.getElementById('message');
+        const copyButton = document.getElementById('copyButton');
+
+        function selectAll() {
+            const el = document.getElementById('promptDisplay');
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+
+        async function tryAutoCopy() {
+            try {
+                await navigator.clipboard.writeText(promptText);
+                showSuccess();
+            } catch (err) {
+                showManualCopy();
+            }
+        }
+
+        function showSuccess() {
+            icon.textContent = '✓';
+            icon.className = 'icon success';
+            title.textContent = 'Prompt Copied!';
+            message.innerHTML = 'The prompt is now in your clipboard.<br>Paste it into ChatGPT or Claude to continue.';
+            copyButton.classList.add('hidden');
+        }
+
+        function showManualCopy() {
+            icon.textContent = '📋';
+            icon.className = 'icon pending';
+            title.textContent = 'One More Step';
+            message.textContent = 'Tap the button below to copy the prompt to your clipboard.';
+            copyButton.classList.remove('hidden');
+        }
+
+        copyButton.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(promptText);
+                copyButton.textContent = '✓ Copied!';
+                copyButton.className = 'copy-button copied';
+                setTimeout(() => { showSuccess(); }, 500);
+            } catch (err) {
+                copyButton.textContent = 'Select & copy manually ↓';
+                const box = document.getElementById('promptBox');
+                const label = document.getElementById('toggleLabel');
+                box.classList.add('visible');
+                label.textContent = 'Hide prompt ↑';
+                setTimeout(() => { selectAll(); }, 150);
+            }
+        });
+
+        function togglePrompt() {
+            const box = document.getElementById('promptBox');
+            const label = document.getElementById('toggleLabel');
+            box.classList.toggle('visible');
+            label.textContent = box.classList.contains('visible') ? 'Hide prompt ↑' : 'Show prompt ↓';
+        }
+
+        setTimeout(tryAutoCopy, 100);
+    </script>
+</body>
+</html>
