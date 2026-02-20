@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Ready to Copy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .icon { font-size: 64px; margin-bottom: 20px; transition: all 0.3s ease; }
+        .icon.success { color: #D4AF37; }
+        .icon.pending { color: #0F4C81; }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .message { color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 30px; }
+        .copy-button {
+            background: #D4AF37;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        .copy-button:hover {
+            background: #c49d2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        .copy-button:active { transform: translateY(0); }
+        .copy-button.copied { background: #27ae60; }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #0F4C81;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+            margin-top: 24px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .toggle-btn:hover { opacity: 1; }
+        .prompt-box {
+            display: none;
+            margin-top: 16px;
+            text-align: left;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: text;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .prompt-box.visible { display: block; }
+        .prompt-text {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            user-select: all;
+            -webkit-user-select: all;
+        }
+        .para { margin-bottom: 10px; }
+        .hint { color: #999; font-style: italic; margin-bottom: 8px; }
+        .bullet { padding-left: 16px; text-indent: -16px; margin-bottom: 6px; }
+        .section { margin-bottom: 12px; font-weight: 600; }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 13px;
+        }
+        .brand { color: #D4AF37; font-weight: 600; }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #D4AF37;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="icon" class="icon pending">📋</div>
+        <h1 id="title">Preparing Your Prompt...</h1>
+        <p id="message" class="message">
+            <span class="loading"></span>
+            Attempting to copy automatically...
+        </p>
+        <button id="copyButton" class="copy-button hidden">Tap to Copy</button>
+        <button class="toggle-btn" onclick="togglePrompt()">
+            <span id="toggleLabel">Show prompt ↓</span>
+        </button>
+
+        <div id="promptBox" class="prompt-box" onclick="selectAll()">
+            <div class="prompt-text" id="promptDisplay">
+                <div class="para">I need help determining if something I've observed is a structural flaw that should disqualify someone, or if I'm overreacting.</div>
+                
+                <div class="section">The Situation:</div>
+                <div class="hint">[Describe What Happened - Be Specific and Factual]</div>
+                
+                <div class="section">Why It Concerns Me:</div>
+                <div class="hint">[What About This Feels Like a Problem?]</div>
+                
+                <div class="section">What They Said/Did in Response:</div>
+                <div class="hint">[How Did They Handle It When You Brought It Up, if Applicable?]</div>
+                
+                <div class="section">My Pattern (from Module 3):</div>
+                <div class="hint">[Briefly Describe - Are You Drawn to Unavailable/Chaotic/etc?]</div>
+                
+                <div class="section">What I'm Unsure About:</div>
+                <div class="hint">[Is This a Tier 1 Issue (Non-Negotiable)?]</div>
+                <div class="hint">[Is This a Character Flaw (Tier 2)?]</div>
+                <div class="hint">[Is This Me Being Triggered by Something Fixable?]</div>
+                <div class="hint">[Is This Me Wanting to Flee Because It's Getting Real?]</div>
+                
+                <div class="para" style="margin-top: 12px;">Please help me:</div>
+                <div class="bullet">1. Identify which tier of risk this falls into (if any)</div>
+                <div class="bullet">2. Distinguish between structural flaw vs. workable issue vs. my own fear</div>
+                <div class="bullet">3. Tell me: If this IS a red flag, why might I be negotiating with it?</div>
+                <div class="bullet">4. If it's NOT a red flag, why might I be seeing danger where there isn't any?</div>
+                <div class="bullet">5. Give me your honest assessment and next steps</div>
+                
+                <div class="para" style="margin-top: 12px;">Be honest and kind. I need the truth—but I need it delivered with care, not coldness.</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span class="brand">Diamond Self</span> • Conscious Choice
+        </div>
+    </div>
+
+    <script>
+        const promptText = `I need help determining if something I've observed is a structural flaw that should disqualify someone, or if I'm overreacting.
+
+The Situation:
+[Describe What Happened - Be Specific and Factual]
+
+Why It Concerns Me:
+[What About This Feels Like a Problem?]
+
+What They Said/Did in Response:
+[How Did They Handle It When You Brought It Up, if Applicable?]
+
+My Pattern (from Module 3):
+[Briefly Describe - Are You Drawn to Unavailable/Chaotic/etc?]
+
+What I'm Unsure About:
+[Is This a Tier 1 Issue (Non-Negotiable)?]
+[Is This a Character Flaw (Tier 2)?]
+[Is This Me Being Triggered by Something Fixable?]
+[Is This Me Wanting to Flee Because It's Getting Real?]
+
+Please help me:
+
+1. Identify which tier of risk this falls into (if any)
+2. Distinguish between structural flaw vs. workable issue vs. my own fear
+3. Tell me: If this IS a red flag, why might I be negotiating with it?
+4. If it's NOT a red flag, why might I be seeing danger where there isn't any?
+5. Give me your honest assessment and next steps
+
+Be honest and kind. I need the truth—but I need it delivered with care, not coldness.`;
+
+        const icon = document.getElementById('icon');
+        const title = document.getElementById('title');
+        const message = document.getElementById('message');
+        const copyButton = document.getElementById('copyButton');
+
+        function selectAll() {
+            const el = document.getElementById('promptDisplay');
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+
+        async function tryAutoCopy() {
+            try {
+                await navigator.clipboard.writeText(promptText);
+                showSuccess();
+            } catch (err) {
+                showManualCopy();
+            }
+        }
+
+        function showSuccess() {
+            icon.textContent = '✓';
+            icon.className = 'icon success';
+            title.textContent = 'Prompt Copied!';
+            message.innerHTML = 'The prompt is now in your clipboard.<br>Paste it into ChatGPT or Claude to continue.';
+            copyButton.classList.add('hidden');
+        }
+
+        function showManualCopy() {
+            icon.textContent = '📋';
+            icon.className = 'icon pending';
+            title.textContent = 'One More Step';
+            message.textContent = 'Tap the button below to copy the prompt to your clipboard.';
+            copyButton.classList.remove('hidden');
+        }
+
+        copyButton.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(promptText);
+                copyButton.textContent = '✓ Copied!';
+                copyButton.className = 'copy-button copied';
+                setTimeout(() => { showSuccess(); }, 500);
+            } catch (err) {
+                copyButton.textContent = 'Select & copy manually ↓';
+                const box = document.getElementById('promptBox');
+                const label = document.getElementById('toggleLabel');
+                box.classList.add('visible');
+                label.textContent = 'Hide prompt ↑';
+                setTimeout(() => { selectAll(); }, 150);
+            }
+        });
+
+        function togglePrompt() {
+            const box = document.getElementById('promptBox');
+            const label = document.getElementById('toggleLabel');
+            box.classList.toggle('visible');
+            label.textContent = box.classList.contains('visible') ? 'Hide prompt ↑' : 'Show prompt ↓';
+        }
+
+        setTimeout(tryAutoCopy, 100);
+    </script>
+</body>
+</html>
