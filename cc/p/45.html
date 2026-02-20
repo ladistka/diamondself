@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Ready to Copy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .icon { font-size: 64px; margin-bottom: 20px; transition: all 0.3s ease; }
+        .icon.success { color: #D4AF37; }
+        .icon.pending { color: #0F4C81; }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .message { color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 30px; }
+        .copy-button {
+            background: #D4AF37;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        .copy-button:hover {
+            background: #c49d2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        .copy-button:active { transform: translateY(0); }
+        .copy-button.copied { background: #27ae60; }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #0F4C81;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+            margin-top: 24px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .toggle-btn:hover { opacity: 1; }
+        .prompt-box {
+            display: none;
+            margin-top: 16px;
+            text-align: left;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: text;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .prompt-box.visible { display: block; }
+        .prompt-text {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            user-select: all;
+            -webkit-user-select: all;
+        }
+        .para { margin-bottom: 10px; }
+        .hint { color: #999; font-style: italic; margin-bottom: 8px; }
+        .bullet { padding-left: 16px; text-indent: -16px; margin-bottom: 6px; }
+        .section { margin-bottom: 12px; font-weight: 600; }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 13px;
+        }
+        .brand { color: #D4AF37; font-weight: 600; }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #D4AF37;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="icon" class="icon pending">📋</div>
+        <h1 id="title">Preparing Your Prompt...</h1>
+        <p id="message" class="message">
+            <span class="loading"></span>
+            Attempting to copy automatically...
+        </p>
+        <button id="copyButton" class="copy-button hidden">Tap to Copy</button>
+        <button class="toggle-btn" onclick="togglePrompt()">
+            <span id="toggleLabel">Show prompt ↓</span>
+        </button>
+
+        <div id="promptBox" class="prompt-box" onclick="selectAll()">
+            <div class="prompt-text" id="promptDisplay">
+                <div class="para">I'm navigating physical intimacy decisions and need help seeing if I'm acting from conditions framework or from pressure/fear/chemistry override.</div>
+                
+                <div class="section">Current Situation:</div>
+                <div class="hint">[Dating Someone? How Long? Considering Intimacy? Already Intimate?]</div>
+                
+                <div class="section">The Five Conditions Check:</div>
+                <div class="para">Safety (nervous system):</div>
+                <div class="hint">[Open/Tight with Them?]</div>
+                <div class="para">Trust (track record):</div>
+                <div class="hint">[Demonstrated over Time?]</div>
+                <div class="para">Clarity (mutual understanding):</div>
+                <div class="hint">[Discussed What This Means?]</div>
+                <div class="para">Desire (genuine want):</div>
+                <div class="hint">[Real Desire or Responding to Pressure?]</div>
+                <div class="para">Sovereignty (full choice):</div>
+                <div class="hint">[Can Say No Without Consequence?]</div>
+                
+                <div class="section">What I'm Noticing:</div>
+                <div class="hint">[Choose What Applies: Chemistry Is Overriding Assessment / I'm Rushing (Fear of Losing Them) / I'm Avoiding (Fear from Past) / I Feel Pressure (Subtle or Direct) / Conditions Aren't Met but I'm Explaining Away / Other]</div>
+                
+                <div class="section">My Pattern (Module 3):</div>
+                <div class="hint">[Relevant - Do You Rush? Avoid? Use Sex for Attachment?]</div>
+                
+                <div class="section">Body Signal:</div>
+                <div class="para">When I think about physical intimacy with them:</div>
+                <div class="hint">[Open/Tight]</div>
+                <div class="para">When I imagine saying "not yet":</div>
+                <div class="hint">[Relief/Anxiety]</div>
+                
+                <div class="para" style="margin-top: 12px;">After I share, please:</div>
+                <div class="bullet">1. Assess if conditions are genuinely met or if I'm negotiating</div>
+                <div class="bullet">2. Identify if I'm rushing (chemistry/pressure) or avoiding (fear/trauma)</div>
+                <div class="bullet">3. Show me what I might be minimizing or overreacting to</div>
+                <div class="bullet">4. Tell me: Based on conditions framework, is this readiness or pressure?</div>
+                <div class="bullet">5. Help me distinguish genuine desire from pattern activation</div>
+                
+                <div class="para" style="margin-top: 12px;">Be honest and kind. I need the truth—but I need it delivered with care, not coldness.</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span class="brand">Diamond Self</span> • Conscious Choice
+        </div>
+    </div>
+
+    <script>
+        const promptText = `I'm navigating physical intimacy decisions and need help seeing if I'm acting from conditions framework or from pressure/fear/chemistry override.
+
+Current Situation:
+[Dating Someone? How Long? Considering Intimacy? Already Intimate?]
+
+The Five Conditions Check:
+
+Safety (nervous system):
+[Open/Tight with Them?]
+
+Trust (track record):
+[Demonstrated over Time?]
+
+Clarity (mutual understanding):
+[Discussed What This Means?]
+
+Desire (genuine want):
+[Real Desire or Responding to Pressure?]
+
+Sovereignty (full choice):
+[Can Say No Without Consequence?]
+
+What I'm Noticing:
+[Choose What Applies: Chemistry Is Overriding Assessment / I'm Rushing (Fear of Losing Them) / I'm Avoiding (Fear from Past) / I Feel Pressure (Subtle or Direct) / Conditions Aren't Met but I'm Explaining Away / Other]
+
+My Pattern (Module 3):
+[Relevant - Do You Rush? Avoid? Use Sex for Attachment?]
+
+Body Signal:
+
+When I think about physical intimacy with them:
+[Open/Tight]
+
+When I imagine saying "not yet":
+[Relief/Anxiety]
+
+After I share, please:
+
+1. Assess if conditions are genuinely met or if I'm negotiating
+2. Identify if I'm rushing (chemistry/pressure) or avoiding (fear/trauma)
+3. Show me what I might be minimizing or overreacting to
+4. Tell me: Based on conditions framework, is this readiness or pressure?
+5. Help me distinguish genuine desire from pattern activation
+
+Be honest and kind. I need the truth—but I need it delivered with care, not coldness.`;
+
+        const icon = document.getElementById('icon');
+        const title = document.getElementById('title');
+        const message = document.getElementById('message');
+        const copyButton = document.getElementById('copyButton');
+
+        function selectAll() {
+            const el = document.getElementById('promptDisplay');
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+
+        async function tryAutoCopy() {
+            try {
+                await navigator.clipboard.writeText(promptText);
+                showSuccess();
+            } catch (err) {
+                showManualCopy();
+            }
+        }
+
+        function showSuccess() {
+            icon.textContent = '✓';
+            icon.className = 'icon success';
+            title.textContent = 'Prompt Copied!';
+            message.innerHTML = 'The prompt is now in your clipboard.<br>Paste it into ChatGPT or Claude to continue.';
+            copyButton.classList.add('hidden');
+        }
+
+        function showManualCopy() {
+            icon.textContent = '📋';
+            icon.className = 'icon pending';
+            title.textContent = 'One More Step';
+            message.textContent = 'Tap the button below to copy the prompt to your clipboard.';
+            copyButton.classList.remove('hidden');
+        }
+
+        copyButton.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(promptText);
+                copyButton.textContent = '✓ Copied!';
+                copyButton.className = 'copy-button copied';
+                setTimeout(() => { showSuccess(); }, 500);
+            } catch (err) {
+                copyButton.textContent = 'Select & copy manually ↓';
+                const box = document.getElementById('promptBox');
+                const label = document.getElementById('toggleLabel');
+                box.classList.add('visible');
+                label.textContent = 'Hide prompt ↑';
+                setTimeout(() => { selectAll(); }, 150);
+            }
+        });
+
+        function togglePrompt() {
+            const box = document.getElementById('promptBox');
+            const label = document.getElementById('toggleLabel');
+            box.classList.toggle('visible');
+            label.textContent = box.classList.contains('visible') ? 'Hide prompt ↑' : 'Show prompt ↓';
+        }
+
+        setTimeout(tryAutoCopy, 100);
+    </script>
+</body>
+</html>
