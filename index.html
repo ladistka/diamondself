@@ -627,7 +627,7 @@
             <div style="max-width: 800px; margin: 0 auto; background: var(--white); padding: 3rem; border-left: 4px solid var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--sapphire); margin: 0;">The Pattern Recognition Prompt</h3>
-                    <button onclick="copyPrompt()" style="background: var(--gold); color: var(--sapphire); border: none; padding: 0.8rem 1.5rem; font-weight: 600; cursor: pointer; font-size: 0.85rem; letter-spacing: 0.05em; transition: all 0.3s ease;">
+                    <button onclick="copyPrompt()" style="background: var(--gold); color: var(--sapphire); border: none; padding: 0.8rem 1.5rem; font-weight: 600; cursor: pointer; font-size: 0.85rem; letter-spacing: 0.05em; transition: all 0.3s ease; transform: scale(1);">
                         COPY PROMPT
                     </button>
                 </div>
@@ -666,16 +666,31 @@ Please be kind but honest. I'm ready to see what I haven't been able to see alon
     <script>
         function copyPrompt() {
             const promptText = document.getElementById('prompt-text').innerText;
+            const button = event.target;
+            
             navigator.clipboard.writeText(promptText).then(() => {
-                const button = event.target;
+                // Change button appearance
                 const originalText = button.innerText;
-                button.innerText = '✓ COPIED';
+                const originalBg = button.style.background;
+                const originalColor = button.style.color;
+                
+                button.innerText = '✓ COPIED!';
                 button.style.background = 'var(--sapphire)';
                 button.style.color = 'var(--white)';
+                button.style.transform = 'scale(1.05)';
+                
+                // Reset after 2 seconds
                 setTimeout(() => {
                     button.innerText = originalText;
                     button.style.background = 'var(--gold)';
                     button.style.color = 'var(--sapphire)';
+                    button.style.transform = 'scale(1)';
+                }, 2000);
+            }).catch(err => {
+                // Fallback if clipboard fails
+                button.innerText = '✗ FAILED';
+                setTimeout(() => {
+                    button.innerText = 'COPY PROMPT';
                 }, 2000);
             });
         }
@@ -897,17 +912,12 @@ Please be kind but honest. I'm ready to see what I haven't been able to see alon
             </div>
             <div class="legal-box">
                 © 2026 Diamond Self. All rights reserved.<br>
-                Legal Entity: Vlada Vinogradova • IIN: 850930051464 • Email: hello@diamondself.co<br>
+                Legal Entity: Vlada Vinogradova • IIN: 850930051464 • Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="553d3039393a15313c34383a3b31263039337b363a">[email&#160;protected]</a><br>
                 <span style="opacity: 0.7; font-size: 0.7rem;">This system is for educational purposes and does not constitute clinical therapy or medical advice.</span>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isActive = answer.classList.contains('active');
-                
-                document.querySelectorAl
