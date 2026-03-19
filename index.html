@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diamond Self: Conscious Choice – Pattern Recognition & Relationship Architecture</title>
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="A comprehensive 600+ page system for recognizing patterns, choosing the right partner, and building relationships without losing yourself. $497 one-time payment, lifetime access.">
     <meta name="keywords" content="relationship workbook, pattern recognition, conscious choice, dating after 40, relationship architecture, self-clarity, conscious partnership">
     <meta name="author" content="Vlada Vinogradova">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://diamondself.co">
     
-    <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Diamond Self: Conscious Choice">
     <meta property="og:description" content="A comprehensive system for recognizing patterns, choosing the right partner, and building relationships without losing yourself. 600+ pages. Lifetime access.">
@@ -22,7 +20,6 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Diamond Self: Conscious Choice">
     <meta name="twitter:description" content="The architecture of conscious choice. 600+ pages. Not self-help. Self-clarity.">
@@ -33,17 +30,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "Diamond Self: Conscious Choice",
-      "description": "A comprehensive 600+ page system for recognizing patterns, choosing the right partner, and building relationships without losing yourself. The architecture of conscious choice.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Diamond Self"
-      },
+      "description": "A comprehensive 600+ page system for recognizing patterns, choosing the right partner, and building relationships without losing yourself.",
+      "brand": { "@type": "Brand", "name": "Diamond Self" },
       "offers": {
         "@type": "Offer",
         "price": "497",
@@ -51,17 +44,63 @@
         "availability": "https://schema.org/InStock",
         "url": "https://diamondself.lemonsqueezy.com/checkout/buy/6b180e67-ecbb-4fab-9a6e-11f994f3d56d"
       },
-      "author": {
-        "@type": "Person",
-        "name": "Vlada Vinogradova"
-      },
-      "category": "Self-Development",
-      "audience": {
-        "@type": "PeopleAudience",
-        "suggestedMinAge": 40
-      }
+      "author": { "@type": "Person", "name": "Vlada Vinogradova" },
+      "category": "Self-Development"
     }
     </script>
+
+    <!-- Cookie Consent + Google Analytics -->
+    <style>
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: #2C3E50; color: #F5F0E8;
+      padding: 1.5rem; display: none; z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+    #cookie-banner.show { display: block; }
+    #cookie-banner p { margin: 0 0 1rem 0; font-size: 0.9rem; line-height: 1.5; }
+    #cookie-banner-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    #cookie-banner button { padding: 0.7rem 1.5rem; border: none; cursor: pointer; font-size: 0.9rem; font-weight: 600; border-radius: 2px; }
+    #cookie-accept { background: #D4AF37; color: #000; }
+    #cookie-decline { background: transparent; color: #F5F0E8; border: 1px solid #F5F0E8; }
+    @media (max-width: 600px) {
+      #cookie-banner-buttons { flex-direction: column; }
+      #cookie-banner button { width: 100%; }
+    }
+    </style>
+    <script>
+    if (!localStorage.getItem('cookieConsent')) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var b = document.getElementById('cookie-banner');
+        if (b) b.classList.add('show');
+      });
+    }
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookie-banner').classList.remove('show');
+      loadGA();
+    }
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      document.getElementById('cookie-banner').classList.remove('show');
+    }
+    function loadGA() {
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q2H6ETTTFS';
+        document.head.appendChild(s);
+        s.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Q2H6ETTTFS');
+        };
+      }
+    }
+    if (localStorage.getItem('cookieConsent') === 'accepted') { loadGA(); }
+    </script>
+    <!-- End Cookie Consent + GA -->
     
     <style>
         :root {
@@ -72,365 +111,75 @@
             --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #8B7355 100%);
             --graphite: #2C3E50;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--graphite);
-            background-color: var(--white);
-            line-height: 1.8;
-            font-size: 18px;
-            overflow-x: hidden;
-        }
-
+        body { font-family: 'Montserrat', sans-serif; color: var(--graphite); background-color: var(--white); line-height: 1.8; font-size: 18px; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.2; }
-
         .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
-
-        /* ════════════════ HERO ════════════════ */
-        .hero {
-            background: var(--sapphire);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--white);
-        }
-
-        .brand-label { 
-            letter-spacing: 0.4em; 
-            font-size: 0.8rem; 
-            text-transform: uppercase; 
-            margin-bottom: 2rem; 
-            color: var(--gold); 
-        }
-        
-        h1 { 
-            font-size: clamp(3rem, 8vw, 5.5rem); 
-            margin-bottom: 1rem; 
-            color: var(--white); 
-        }
-        
-        .hero-subtitle { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-style: italic; 
-            font-size: 1.8rem; 
-            margin-bottom: 3rem; 
-            color: rgba(255,255,255,0.9); 
-        }
-        
-        /* ════════════════ SECTIONS ════════════════ */
+        .hero { background: var(--sapphire); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; color: var(--white); }
+        .brand-label { letter-spacing: 0.4em; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 2rem; color: var(--gold); }
+        h1 { font-size: clamp(3rem, 8vw, 5.5rem); margin-bottom: 1rem; color: var(--white); }
+        .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.8rem; margin-bottom: 3rem; color: rgba(255,255,255,0.9); }
         section { padding: 8rem 0; }
-        
-        .luxury-card { 
-            background: var(--white); 
-            padding: 4rem; 
-            border-radius: 2px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
-            border-left: 4px solid var(--gold); 
-        }
-        
-        h2 { 
-            font-size: 3rem; 
-            margin-bottom: 2.5rem; 
-            color: var(--sapphire); 
-        }
-        
+        .luxury-card { background: var(--white); padding: 4rem; border-radius: 2px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-left: 4px solid var(--gold); }
+        h2 { font-size: 3rem; margin-bottom: 2.5rem; color: var(--sapphire); }
         p { margin-bottom: 2rem; }
-
-        .pull-quote {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-style: italic;
-            text-align: center;
-            color: var(--gold);
-            padding: 4rem 0;
-            border-top: 1px solid var(--champagne);
-            border-bottom: 1px solid var(--champagne);
-            margin: 4rem 0;
-        }
-
-        /* ════════════════ PHASES ════════════════ */
-        .phase { 
-            margin-bottom: 4rem; 
-            position: relative; 
-            padding-left: 3rem; 
-        }
-        
-        .phase::before { 
-            content: '◆'; 
-            position: absolute; 
-            left: 0; 
-            color: var(--gold); 
-            font-size: 1.5rem; 
-        }
-        
-        .phase-name { 
-            font-weight: 600; 
-            color: var(--sapphire); 
-            font-size: 1.4rem; 
-            margin-bottom: 0.5rem; 
-        }
-
-        /* ════════════════ PREVIEW ════════════════ */
-        .preview-section { 
-            background: var(--white); 
-            border-top: 1px solid var(--champagne); 
-        }
-
-        .download-btn {
-            display: inline-block;
-            background: var(--sapphire);
-            color: var(--white);
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: 2px solid var(--sapphire);
-        }
-
-        .download-btn:hover {
-            background: var(--gold);
-            color: var(--sapphire);
-            border-color: var(--gold);
-            transform: translateY(-2px);
-        }
-
-        /* ════════════════ MODULES ════════════════ */
-        .syllabus-section { 
-            background: var(--champagne); 
-        }
-        
-        .module-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 2rem; 
-            margin-top: 3rem; 
-        }
-        
-        .module-card {
-            background: var(--white);
-            padding: 2rem;
-            border-left: 3px solid var(--gold);
-            transition: transform 0.3s ease;
-        }
-        
+        .pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-style: italic; text-align: center; color: var(--gold); padding: 4rem 0; border-top: 1px solid var(--champagne); border-bottom: 1px solid var(--champagne); margin: 4rem 0; }
+        .phase { margin-bottom: 4rem; position: relative; padding-left: 3rem; }
+        .phase::before { content: '◆'; position: absolute; left: 0; color: var(--gold); font-size: 1.5rem; }
+        .phase-name { font-weight: 600; color: var(--sapphire); font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .preview-section { background: var(--white); border-top: 1px solid var(--champagne); }
+        .download-btn { display: inline-block; background: var(--sapphire); color: var(--white); padding: 1.2rem 3rem; text-decoration: none; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.9rem; transition: all 0.3s ease; border: 2px solid var(--sapphire); }
+        .download-btn:hover { background: var(--gold); color: var(--sapphire); border-color: var(--gold); transform: translateY(-2px); }
+        .syllabus-section { background: var(--champagne); }
+        .module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .module-card { background: var(--white); padding: 2rem; border-left: 3px solid var(--gold); transition: transform 0.3s ease; }
         .module-card:hover { transform: translateX(5px); }
-        
-        .module-number { 
-            font-size: 0.75rem; 
-            letter-spacing: 0.2em; 
-            text-transform: uppercase; 
-            color: var(--gold); 
-            margin-bottom: 0.5rem; 
-        }
-        
-        .module-title { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: 1.3rem; 
-            color: var(--sapphire); 
-            margin-bottom: 0.5rem; 
-        }
-        
-        .module-desc { 
-            font-size: 0.9rem; 
-            line-height: 1.6; 
-            color: #666; 
-        }
-
-        /* ════════════════ FAQ ════════════════ */
-        .faq-section { 
-            background: var(--white); 
-            border-top: 1px solid var(--champagne); 
-        }
-        
-        .faq-item {
-            margin-bottom: 1rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            border-bottom: 1px solid var(--champagne);
-        }
-
-        .faq-question {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--sapphire);
-            padding: 1.5rem 3rem 1.5rem 0;
-            font-weight: 600;
-            cursor: pointer;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
+        .module-number { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+        .module-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--sapphire); margin-bottom: 0.5rem; }
+        .module-desc { font-size: 0.9rem; line-height: 1.6; color: #666; }
+        .faq-section { background: var(--white); border-top: 1px solid var(--champagne); }
+        .faq-item { margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; border-bottom: 1px solid var(--champagne); }
+        .faq-question { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--sapphire); padding: 1.5rem 3rem 1.5rem 0; font-weight: 600; cursor: pointer; position: relative; transition: color 0.3s ease; }
         .faq-question:hover { color: var(--gold); }
-
-        .faq-question::after {
-            content: '+';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            color: var(--gold);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-        }
-
+        .faq-question::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 2rem; color: var(--gold); font-family: 'Montserrat', sans-serif; font-weight: 300; }
         .faq-question.active::after { content: '−'; }
-
-        .faq-answer {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--graphite);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            padding: 0;
-        }
-
-        .faq-answer.active {
-            max-height: 500px;
-            padding: 0 0 2rem 0;
-        }
-
+        .faq-answer { font-size: 1rem; line-height: 1.8; color: var(--graphite); max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; padding: 0; }
+        .faq-answer.active { max-height: 500px; padding: 0 0 2rem 0; }
         .faq-answer strong { color: var(--sapphire); }
-
-        /* ════════════════ PHILOSOPHY ════════════════ */
-        .philosophy-section { 
-            background: var(--sapphire); 
-            color: var(--white); 
-        }
-        
+        .philosophy-section { background: var(--sapphire); color: var(--white); }
         .philosophy-section h2 { color: var(--white); }
-        
-        .philosophy-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 3rem; 
-            margin-top: 3rem; 
-        }
-        
-        .belief { 
-            border-left: 3px solid var(--gold); 
-            padding-left: 1.5rem; 
-        }
-        
-        .belief-title { 
-            font-weight: 600; 
-            font-size: 1.1rem; 
-            margin-bottom: 0.5rem; 
-        }
-        
-        .belief-text { 
-            font-size: 0.95rem; 
-            opacity: 0.9; 
-            line-height: 1.6; 
-        }
-
-        /* ════════════════ CTA ════════════════ */
-        .cta-section { 
-            background: var(--sapphire); 
-            color: var(--white); 
-            text-align: center; 
-            padding: 10rem 2rem; 
-        }
-        
-        .price { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: 5rem; 
-            margin: 2rem 0; 
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 1.5rem 4rem;
-            background: var(--gold-gradient);
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-weight: 600;
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-        }
-        
+        .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-top: 3rem; }
+        .belief { border-left: 3px solid var(--gold); padding-left: 1.5rem; }
+        .belief-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .belief-text { font-size: 0.95rem; opacity: 0.9; line-height: 1.6; }
+        .cta-section { background: var(--sapphire); color: var(--white); text-align: center; padding: 10rem 2rem; }
+        .price { font-family: 'Cormorant Garamond', serif; font-size: 5rem; margin: 2rem 0; }
+        .cta-button { display: inline-block; padding: 1.5rem 4rem; background: var(--gold-gradient); color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600; transition: transform 0.3s ease; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
         .cta-button:hover { transform: translateY(-5px); }
-
-        /* ════════════════ FOOTER ════════════════ */
-        footer { 
-            background: #1a1a1a; 
-            color: #888; 
-            padding: 6rem 2rem 3rem; 
-            font-size: 0.9rem; 
-        }
-        
-        .footer-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 4rem; 
-            margin-bottom: 4rem; 
-            border-bottom: 1px solid #333; 
-            padding-bottom: 4rem; 
-        }
-        
-        .footer-brand { 
-            font-family: 'Cormorant Garamond', serif; 
-            color: var(--white); 
-            font-size: 1.8rem; 
-            margin-bottom: 1rem; 
-        }
-        
-        .footer-nav a { 
-            color: #888; 
-            text-decoration: none; 
-            display: block; 
-            margin-bottom: 0.8rem; 
-            transition: color 0.3s; 
-        }
-        
+        footer { background: #1a1a1a; color: #888; padding: 6rem 2rem 3rem; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 4rem; border-bottom: 1px solid #333; padding-bottom: 4rem; }
+        .footer-brand { font-family: 'Cormorant Garamond', serif; color: var(--white); font-size: 1.8rem; margin-bottom: 1rem; }
+        .footer-nav a { color: #888; text-decoration: none; display: block; margin-bottom: 0.8rem; transition: color 0.3s; }
         .footer-nav a:hover { color: var(--gold); }
-        
-        .legal-box { 
-            text-align: center; 
-            font-size: 0.75rem; 
-            color: #555; 
-            line-height: 2; 
-        }
-
-        /* ════════════════ RESPONSIVE ════════════════ */
+        .legal-box { text-align: center; font-size: 0.75rem; color: #555; line-height: 2; }
         @media (max-width: 768px) {
-            .footer-grid { 
-                grid-template-columns: 1fr; 
-                text-align: center; 
-            }
-            
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .luxury-card { padding: 2rem; }
-            
-            .pdf-viewer-container { 
-                padding: 1rem; 
-            }
-            
-            .pdf-viewer-container iframe { 
-                height: 500px; 
-            }
-            
             h2 { font-size: 2.2rem; }
-            
             .pull-quote { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ════════════════ HERO ════════════════ -->
+<div id="cookie-banner">
+  <p>We use Google Analytics to understand how visitors use our site. No personal data is collected without your consent. <a href="/privacy.html" style="color: #D4AF37;">Privacy Policy</a></p>
+  <div id="cookie-banner-buttons">
+    <button id="cookie-accept" onclick="acceptCookies()">Accept</button>
+    <button id="cookie-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+
     <div class="hero">
         <div class="brand-label">DIAMOND SELF</div>
         <h1>The Architecture of<br>Conscious Choice</h1>
@@ -438,7 +187,6 @@
         <div style="font-size: 2rem; color: var(--gold);">◆</div>
     </div>
 
-    <!-- ════════════════ INTRO ════════════════ -->
     <div class="container">
         <section>
             <div class="luxury-card">
@@ -454,6 +202,7 @@
             <h2>The Mechanism</h2>
             <p>Your nervous system is optimized for survival, not expansion. It catalogues early experiences and builds recognition patterns based on what was familiar—regardless of whether that familiarity served you.</p>
             <p>What your body recognizes as chemistry may be the neural signature of an old wound seeking completion. Without the ability to distinguish between these signals, you're operating with corrupted coordinates.</p>
+            <p style="font-size: 0.95rem; color: #888; font-style: italic;">The methodology is rooted in NLP and somatic intelligence.</p>
         </section>
 
         <section>
@@ -473,13 +222,10 @@
         </section>
     </div>
 
-    <!-- ════════════════ PREVIEW ════════════════ -->
     <section class="preview-section">
         <div class="container">
             <h2>Inside the System</h2>
             <p style="text-align: center; font-size: 1.1rem; max-width: 700px; margin: 0 auto 3rem;">This is not a book to read. This is an infrastructure to inhabit. 630+ pages of diagnostic tools, AI-integration protocols, and structural frameworks.</p>
-            
-            <!-- PDF Embed -->
             <div style="max-width: 900px; margin: 3rem auto;">
                 <div style="background: var(--white); padding: 2rem; border-left: 4px solid var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
                     <object data="/Diamond_Self_Conscious_Choice_Preview.pdf" type="application/pdf" width="100%" height="700" style="border: none;">
@@ -489,149 +235,117 @@
                     </object>
                 </div>
             </div>
-
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="/Diamond_Self_Conscious_Choice_Preview.pdf" download class="download-btn">
-                    Download Full Preview (35 Pages)
-                </a>
+                <a href="/Diamond_Self_Conscious_Choice_Preview.pdf" download class="download-btn">Download Full Preview (35 Pages)</a>
             </div>
         </div>
     </section>
 
-    <!-- ════════════════ MODULES ════════════════ -->
     <section class="syllabus-section">
         <div class="container">
             <h2>The Complete System</h2>
             <p style="text-align: center; font-size: 1.1rem; max-width: 700px; margin: 0 auto 4rem;">12 modules organized across three phases. 600+ pages. A lifetime of clarity.</p>
-            
             <div class="module-grid">
                 <div class="module-card">
                     <div class="module-number">Module 01</div>
                     <div class="module-title">The Diamond Core</div>
                     <div class="module-desc">Define your irreducible value and create your Diamond Value Statement.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 02</div>
                     <div class="module-title">The Vision Map</div>
                     <div class="module-desc">Map what you actually want versus what you've been conditioned to accept.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 03</div>
                     <div class="module-title">The Pattern Breaker</div>
                     <div class="module-desc">Identify and dismantle the inherited patterns that no longer serve you.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 04</div>
                     <div class="module-title">The Recognition Code</div>
                     <div class="module-desc">Develop the ability to recognize compatibility before emotional investment.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 05</div>
                     <div class="module-title">The Green Light Protocol</div>
                     <div class="module-desc">Learn what true partnership compatibility looks like in practice.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 06</div>
                     <div class="module-title">Somatic Intelligence</div>
                     <div class="module-desc">Trust your body's signals when words obscure the truth.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 07</div>
                     <div class="module-title">The Disqualification Protocol</div>
                     <div class="module-desc">Systematic recognition of red flags and dealbreakers.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 08</div>
                     <div class="module-title">The Sovereign Departure</div>
                     <div class="module-desc">Leave with dignity when the architecture proves incompatible.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 09</div>
                     <div class="module-title">The Field Work</div>
                     <div class="module-desc">Apply the framework in real-world scenarios with confidence.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 10</div>
                     <div class="module-title">Provision Architecture</div>
                     <div class="module-desc">Understand how sustainable partnerships are structured and maintained.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 11</div>
-                    <div class="module-title">Mature Love</div>
+                    <div class="module-title">Mature Partnership</div>
                     <div class="module-desc">Navigate partnership after 40 with wisdom and clear-eyed realism.</div>
                 </div>
-                
                 <div class="module-card">
                     <div class="module-number">Module 12</div>
                     <div class="module-title">Conscious Intimacy</div>
                     <div class="module-desc">Build physical and emotional intimacy that serves openness, not performance.</div>
                 </div>
             </div>
-
-            <p style="text-align: center; margin-top: 4rem; font-style: italic; color: #666; font-size: 1rem;">
-                Plus a complete Integration module for lifetime maintenance of your clarity architecture.
-            </p>
+            <p style="text-align: center; margin-top: 4rem; font-style: italic; color: #666; font-size: 1rem;">Plus a complete Integration module for lifetime maintenance of your clarity architecture.</p>
         </div>
     </section>
 
-    <!-- ════════════════ AI INTEGRATION ════════════════ -->
     <section style="background: var(--white); padding: 8rem 0; border-top: 1px solid var(--champagne);">
         <div class="container">
             <h2>AI-Enhanced Clarity</h2>
             <p style="text-align: center; font-size: 1.1rem; max-width: 700px; margin: 0 auto 4rem; line-height: 1.7;">Every module includes specialized AI prompts—precision tools for pattern analysis, blind spot detection, and structural clarity. Use them with any AI (free or paid), or skip them entirely. The choice is yours.</p>
-            
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; max-width: 1000px; margin: 0 auto;">
                 <div style="padding: 2.5rem; background: var(--champagne); border-left: 3px solid var(--gold);">
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--sapphire); margin-bottom: 1rem;">Pattern Recognition</h3>
                     <p style="font-size: 0.95rem; line-height: 1.7;">Surface recurring dynamics across your relationship history. AI identifies structural patterns you're too close to see.</p>
                 </div>
-                
                 <div style="padding: 2.5rem; background: var(--champagne); border-left: 3px solid var(--gold);">
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--sapphire); margin-bottom: 1rem;">Blind Spot Detection</h3>
                     <p style="font-size: 0.95rem; line-height: 1.7;">Your logic has gaps. AI acts as external oversight—identifying where your reasoning contradicts itself.</p>
                 </div>
-                
                 <div style="padding: 2.5rem; background: var(--champagne); border-left: 3px solid var(--gold);">
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--sapphire); margin-bottom: 1rem;">Calibration Protocols</h3>
                     <p style="font-size: 0.95rem; line-height: 1.7;">Test whether your body's signals are accurate or corrupted. AI helps you distinguish between openness and performance.</p>
                 </div>
-                
                 <div style="padding: 2.5rem; background: var(--champagne); border-left: 3px solid var(--gold);">
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--sapphire); margin-bottom: 1rem;">Decision Architecture</h3>
                     <p style="font-size: 0.95rem; line-height: 1.7;">When you're at a crossroads, AI walks you through the framework—structured, unemotional, precise.</p>
                 </div>
             </div>
-            
-            <p style="text-align: center; margin-top: 3rem; font-size: 0.95rem; color: #666; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7;">
-                48 prompts total. One for each module, plus specialized protocols for critical junctures. Use them as often or as rarely as clarity requires.
-            </p>
+            <p style="text-align: center; margin-top: 3rem; font-size: 0.95rem; color: #666; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7;">48 prompts total. One for each module, plus specialized protocols for critical junctures. Use them as often or as rarely as clarity requires.</p>
         </div>
     </section>
 
-    <!-- ════════════════ AI PROMPT EXAMPLE ════════════════ -->
     <section style="background: var(--sapphire); padding: 8rem 0;">
         <div class="container">
             <h2 style="color: var(--white); margin-bottom: 1.5rem;">See How It Works</h2>
             <p style="text-align: center; font-size: 1.05rem; max-width: 700px; margin: 0 auto 3rem; color: rgba(255,255,255,0.85); line-height: 1.7;">Here's one of the 48 prompts from the system. Copy it, add your context, and see what structural clarity looks like.</p>
-            
             <div style="max-width: 800px; margin: 0 auto; background: var(--white); padding: 3rem; border-left: 4px solid var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--sapphire); margin: 0;">The Pattern Recognition Prompt</h3>
-                    <button onclick="copyPrompt()" style="background: var(--gold); color: var(--sapphire); border: none; padding: 0.8rem 1.5rem; font-weight: 600; cursor: pointer; font-size: 0.85rem; letter-spacing: 0.05em; transition: all 0.3s ease; transform: scale(1);">
-                        COPY PROMPT
-                    </button>
+                    <button onclick="copyPrompt()" style="background: var(--gold); color: var(--sapphire); border: none; padding: 0.8rem 1.5rem; font-weight: 600; cursor: pointer; font-size: 0.85rem; letter-spacing: 0.05em; transition: all 0.3s ease;">COPY PROMPT</button>
                 </div>
-                
                 <div id="prompt-text" style="background: #F8F9FA; padding: 2rem; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.8; color: #2C3E50; border-left: 3px solid var(--sapphire); white-space: pre-wrap;">I need help seeing a pattern I'm too close to recognize.
 
 I'm going to describe my last 2-3 significant relationships. For each one, I'll share:
@@ -655,10 +369,7 @@ Please be kind but honest. I'm ready to see what I haven't been able to see alon
 ---
 
 [Paste your relationship history here. Be specific about what attracted you, how the dynamic played out, and how you felt in your body throughout each relationship.]</div>
-                
-                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #666; font-style: italic;">
-                    Try it. Copy this prompt, add your context, see what clarity looks like. Then understand: the prompt shows you the pattern. The workbook rebuilds the structure. 48 prompts guide the analysis. 630 pages do the work.
-                </p>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #666; font-style: italic;">Try it. Copy this prompt, add your context, see what clarity looks like. Then understand: the prompt shows you the pattern. The workbook rebuilds the structure. 48 prompts guide the analysis. 630 pages do the work.</p>
             </div>
         </div>
     </section>
@@ -667,67 +378,48 @@ Please be kind but honest. I'm ready to see what I haven't been able to see alon
         function copyPrompt() {
             const promptText = document.getElementById('prompt-text').innerText;
             const button = event.target;
-            
             navigator.clipboard.writeText(promptText).then(() => {
-                // Change button appearance
-                const originalText = button.innerText;
-                const originalBg = button.style.background;
-                const originalColor = button.style.color;
-                
+                const orig = button.innerText;
                 button.innerText = '✓ COPIED!';
                 button.style.background = 'var(--sapphire)';
                 button.style.color = 'var(--white)';
-                button.style.transform = 'scale(1.05)';
-                
-                // Reset after 2 seconds
                 setTimeout(() => {
-                    button.innerText = originalText;
+                    button.innerText = orig;
                     button.style.background = 'var(--gold)';
                     button.style.color = 'var(--sapphire)';
-                    button.style.transform = 'scale(1)';
                 }, 2000);
-            }).catch(err => {
-                // Fallback if clipboard fails
+            }).catch(() => {
                 button.innerText = '✗ FAILED';
-                setTimeout(() => {
-                    button.innerText = 'COPY PROMPT';
-                }, 2000);
+                setTimeout(() => { button.innerText = 'COPY PROMPT'; }, 2000);
             });
         }
     </script>
 
-    <!-- ════════════════ PHILOSOPHY ════════════════ -->
     <section class="philosophy-section">
         <div class="container">
             <h2>The Foundation</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto 4rem; opacity: 0.9;">These principles underpin every module, exercise, and framework in the Diamond Self system.</p>
-            
             <div class="philosophy-grid">
                 <div class="belief">
                     <div class="belief-title">Clarity Over Chemistry</div>
                     <div class="belief-text">What your nervous system flags as "chemistry" may be trauma recognition. True compatibility requires distinguishing between familiar discomfort and actual alignment.</div>
                 </div>
-                
                 <div class="belief">
                     <div class="belief-title">Structure Over Sentiment</div>
                     <div class="belief-text">Sustainable life choices are built on architectural principles, not emotional intensity. The right path fits your structure—it doesn't require you to abandon it.</div>
                 </div>
-                
                 <div class="belief">
                     <div class="belief-title">Evidence Over Intuition</div>
                     <div class="belief-text">Your intuition is only as reliable as your calibration. When patterns are corrupted, you need external frameworks to assess reality accurately.</div>
                 </div>
-                
                 <div class="belief">
                     <div class="belief-title">Precision Over Perfection</div>
                     <div class="belief-text">There is no perfect path. There is the configuration that complements yours—and the systematic ability to recognize that alignment.</div>
                 </div>
-                
                 <div class="belief">
                     <div class="belief-title">Sovereignty Over Compromise</div>
                     <div class="belief-text">True alignment opens you. If you're consistently tight—negotiating away your requirements—the architecture is wrong.</div>
                 </div>
-                
                 <div class="belief">
                     <div class="belief-title">Depth Over Speed</div>
                     <div class="belief-text">Real change is not instantaneous. The work is iterative, requiring return visits to specific modules as patterns resurface. This is architecture, not intervention.</div>
@@ -736,169 +428,98 @@ Please be kind but honest. I'm ready to see what I haven't been able to see alon
         </div>
     </section>
 
-    <!-- ════════════════ AUTHOR ════════════════ -->
     <section style="background: var(--white); padding: 8rem 0;">
         <div class="container">
             <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-                <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; line-height: 1.6; color: var(--sapphire); margin-bottom: 2rem;">
-                    "I develop structured methodologies for those who demand the same intellectual rigor in their personal lives as they do in their professional careers. Diamond Self was engineered to replace emotional guesswork with structural clarity. My role is not to be a guru, but a systemic designer, providing you with the architectural tools to rebuild your own foundation."
-                </p>
-                <p style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.1rem; color: var(--gold); margin-top: 2rem;">
-                    — Vlada Vinogradova
-                </p>
-                <p style="font-size: 0.8rem; color: #999; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.15em;">
-                    Creator of Diamond Self: Conscious Choice
-                </p>
+                <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; line-height: 1.6; color: var(--sapphire); margin-bottom: 2rem;">"I develop structured methodologies for those who demand the same intellectual rigor in their personal lives as they do in their professional careers. Diamond Self was engineered to replace emotional guesswork with structural clarity. My role is not to be a guru, but a systemic designer, providing you with the architectural tools to rebuild your own foundation."</p>
+                <p style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.1rem; color: var(--gold); margin-top: 2rem;">— Vlada Vinogradova</p>
+                <p style="font-size: 0.8rem; color: #999; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.15em;">Creator of Diamond Self: Conscious Choice</p>
             </div>
         </div>
     </section>
 
-    <!-- ════════════════ FAQ ════════════════ -->
     <section class="faq-section">
         <div class="container">
             <h2>Questions</h2>
 
             <div class="faq-item">
                 <div class="faq-question">Is this a physical book or digital file?</div>
-                <div class="faq-answer">
-                    <strong>Digital infrastructure.</strong> Upon purchase, you receive immediate access to the 630-page PDF. Use it on tablet, laptop, or print it. The digital format allows you to copy/paste the 48 AI prompts directly into your preferred AI assistant.
-                </div>
+                <div class="faq-answer"><strong>Digital infrastructure.</strong> Upon purchase, you receive immediate access to the 630-page PDF. Use it on tablet, laptop, or print it. The digital format allows you to copy/paste the 48 AI prompts directly into your preferred AI assistant.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">Why $497?</div>
-                <div class="faq-answer">
-                    This is not a "quick read." It's a <strong>comprehensive recalibration system</strong> that replaces months of therapy or coaching focused on pattern work. You're paying for years of architectural development, 12 deep modules, 48 AI protocols, and a lifetime toolset for conscious decision-making. One-time investment. Permanent access.
-                </div>
+                <div class="faq-answer">This is not a "quick read." It's a <strong>comprehensive recalibration system</strong> that replaces months of therapy or coaching focused on pattern work. You're paying for years of architectural development, 12 deep modules, 48 AI protocols, and a lifetime toolset for conscious decision-making. One-time investment. Permanent access.</div>
             </div>
-
+            <div class="faq-item">
+                <div class="faq-question">Can this be used without AI tools?</div>
+                <div class="faq-answer"><strong>Absolutely.</strong> The AI prompts are a supplement, not a requirement. The core system—all 600+ pages of exercises, frameworks, and methodologies—works entirely on its own. If you choose to use the prompts, free tools like ChatGPT (free tier) work perfectly fine. You decide how much or how little to use them.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is this only for women?</div>
+                <div class="faq-answer"><strong>No.</strong> The methodology is universal. Pattern recognition, somatic intelligence, and conscious decision-making apply regardless of gender. While some examples reflect female experience, the core framework—understanding what drives your choices and learning to make them from clarity rather than conditioning—works for anyone ready to do honest structural work.</div>
+            </div>
             <div class="faq-item">
                 <div class="faq-question">Why can't I just talk to AI for free instead?</div>
-                <div class="faq-answer">
-                    AI can answer questions. It cannot provide <strong>architecture.</strong> This system offers a structured, sequential methodology built over years of coaching practice—not random conversational responses. The exercises are designed to surface blind spots, challenge inherited patterns, and build a complete decision-making framework. Free AI gives you answers. This system gives you a method you own forever.
-                </div>
+                <div class="faq-answer">AI can answer questions. It cannot provide <strong>architecture.</strong> This system offers a structured, sequential methodology built over years of coaching practice—not random conversational responses. The exercises are designed to surface blind spots, challenge inherited patterns, and build a complete decision-making framework. Free AI gives you answers. This system gives you a method you own forever.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">Wouldn't working with a real person be better?</div>
-                <div class="faq-answer">
-                    Human coaches bring their own biases, interpretations, and agendas—often unconsciously. They may push their vision of what your life "should" look like. This system has no agenda except clarity. It doesn't tell you what to choose. It gives you the <strong>framework to choose consciously.</strong> You work at your own pace, return to modules as needed, and never depend on someone else's availability or perspective.
-                </div>
+                <div class="faq-answer">Human coaches bring their own biases, interpretations, and agendas—often unconsciously. This system has no agenda except clarity. It doesn't tell you what to choose. It gives you the <strong>framework to choose consciously.</strong> You work at your own pace, return to modules as needed, and never depend on someone else's availability or perspective.</div>
             </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Do I need a paid AI subscription to use this?</div>
-                <div class="faq-answer">
-                    <strong>No.</strong> While the workbook includes AI prompts for deeper reflection, they're optional. The core system—all 600+ pages of exercises, frameworks, and methodologies—works entirely on its own. The AI prompts are a supplement, not a requirement. If you choose to use them, free AI tools like ChatGPT (free tier) work perfectly fine.
-                </div>
-            </div>
-
             <div class="faq-item">
                 <div class="faq-question">Is my data private when using AI prompts?</div>
-                <div class="faq-answer">
-                    <strong>Yes. Completely private.</strong> You don't feed your personal data into the workbook itself. The AI prompts are templates you copy into your own private AI session (ChatGPT, Claude, etc.). The workbook is a static PDF—nothing you write leaves your device unless you choose to share it. Your reflections remain entirely private.
-                </div>
+                <div class="faq-answer"><strong>Yes. Completely private.</strong> The AI prompts are templates you copy into your own private AI session. The workbook is a static PDF—nothing you write leaves your device unless you choose to share it.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">I'm under 40. Will this still work for me?</div>
-                <div class="faq-answer">
-                    <strong>Yes.</strong> The methodology is universal. While some modules address dynamics more common after 40 (dating with children, established life structures, accumulated patterns), the core framework—pattern recognition, somatic intelligence, decision-making architecture—applies at any age. If you're seeking <strong>structured clarity</strong> rather than prescriptive advice, this system will serve you.
-                </div>
+                <div class="faq-answer"><strong>Yes.</strong> The methodology is universal. While some modules address dynamics more common after 40, the core framework—pattern recognition, somatic intelligence, decision-making architecture—applies at any age. Patterns don't wait until 40 to form.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">Does this work for non-traditional relationships?</div>
-                <div class="faq-answer">
-                    <strong>Absolutely.</strong> This system is about <strong>conscious choice and pattern recognition</strong>—not enforcing a particular relationship structure. Whether you're polyamorous, choosing non-monogamy, or building unconventional partnerships, the framework helps you assess alignment, recognize incompatibility, and make decisions from clarity rather than conditioning. The architecture adapts to your design.
-                </div>
+                <div class="faq-answer"><strong>Absolutely.</strong> This system is about <strong>conscious choice and pattern recognition</strong>—not enforcing a particular relationship structure. The architecture adapts to your design.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">What if I buy this and it doesn't work for me?</div>
-                <div class="faq-answer">
-                    Due to the nature of digital products, <strong>all sales are final.</strong> However, you can read the first 35 pages above to see if the methodology resonates before purchasing. If you experience technical issues accessing the product, contact <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="29414c454546694d40484446474d5a4c454f074a46">[email&#160;protected]</a> and we'll resolve it.
-                </div>
+                <div class="faq-answer">Due to the nature of digital products, <strong>all sales are final.</strong> You can read the first 35 pages above to see if the methodology resonates before purchasing. If you experience technical issues, contact <a href="mailto:hello@diamondself.co">hello@diamondself.co</a> and we'll resolve it.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">How long does it take to complete?</div>
-                <div class="faq-answer">
-                    This isn't a course with a deadline. It's <strong>architecture you return to.</strong> Some people work through it intensively in 6-8 weeks. Others take months, revisiting specific modules as patterns resurface. You own it for life—use it at whatever pace serves your clarity.
-                </div>
+                <div class="faq-answer">This isn't a course with a deadline. It's <strong>architecture you return to.</strong> Some people work through it intensively in 6-8 weeks. Others take months, revisiting specific modules as patterns resurface. You own it for life.</div>
             </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I know if this is right for me?</div>
-                <div class="faq-answer">
-                    Try the Pattern Recognition prompt above. If the questions it asks feel relevant—if you're ready to look at your patterns honestly rather than justify them—this system will serve you. If the prompt feels premature or threatening, you may need different support first. The system is for people who are done performing and ready to see clearly.
-                </div>
-            </div>
-
             <div class="faq-item">
                 <div class="faq-question">Is this only about romantic relationships?</div>
-                <div class="faq-answer">
-                    <strong>No.</strong> While many examples focus on partnership, the pattern recognition framework applies to any domain where clarity matters: career decisions, friendships, family dynamics, life choices. The methodology is universal. Romantic relationships are simply where misalignment costs the most.
-                </div>
+                <div class="faq-answer"><strong>No.</strong> While many examples focus on partnership, the pattern recognition framework applies to any domain where clarity matters: career decisions, friendships, family dynamics, life choices. Romantic relationships are simply where misalignment costs the most.</div>
             </div>
         </div>
     </section>
 
-    <!-- ════════════════ EXCLUSIVITY ════════════════ -->
     <section style="background: var(--white); padding: 4rem 0; border-top: 1px solid var(--champagne);">
         <div class="container" style="text-align: center;">
             <h3 style="font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--sapphire); font-size: 2.2rem; margin-bottom: 1.5rem;">Designed for the Sovereign Mind.</h3>
-            <p style="font-size: 1rem; max-width: 650px; margin: 0 auto; opacity: 0.8; line-height: 1.8;">
-                This system is for those who value depth, precision, and personal responsibility. It is built for individuals who approach their personal evolution with the same rigor they apply to their professional life. If you are ready to trade guesswork for a structured blueprint, you are in the right place.
-            </p>
+            <p style="font-size: 1rem; max-width: 650px; margin: 0 auto; opacity: 0.8; line-height: 1.8;">This system is for those who value depth, precision, and personal responsibility. It is built for individuals who approach their personal evolution with the same rigor they apply to their professional life. If you are ready to trade guesswork for a structured blueprint, you are in the right place.</p>
         </div>
     </section>
 
-    <!-- ════════════════ CTA ════════════════ -->
     <section class="cta-section">
         <div class="container">
             <div class="brand-label" style="color: rgba(255,255,255,0.6); margin-bottom: 2rem;">THE FULL SYSTEM</div>
-            
-            <p style="font-size: 1.3rem; margin-bottom: 1rem; opacity: 0.9; font-family: 'Cormorant Garamond'; font-style: italic;">
-                The question isn't whether you'll change the pattern.
-            </p>
-            <p style="font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.9; font-family: 'Cormorant Garamond'; font-style: italic;">
-                It's how many more years you'll spend in it first.
-            </p>
-            
+            <p style="font-size: 1.3rem; margin-bottom: 1rem; opacity: 0.9; font-family: 'Cormorant Garamond'; font-style: italic;">The question isn't whether you'll change the pattern.</p>
+            <p style="font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.9; font-family: 'Cormorant Garamond'; font-style: italic;">It's how many more years you'll spend in it first.</p>
             <h2>Diamond Self: Conscious Choice</h2>
-            
             <div class="price">$497</div>
-            
-            <p style="font-size: 1rem; opacity: 0.85; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                One-time investment • Lifetime access to your personal clarity architecture
-            </p>
-            
+            <p style="font-size: 1rem; opacity: 0.85; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">One-time investment • Lifetime access to your personal clarity architecture</p>
             <a href="https://diamondself.lemonsqueezy.com/checkout/buy/6b180e67-ecbb-4fab-9a6e-11f994f3d56d" class="cta-button">Secure Access Now</a>
-            
-            <div style="margin-top: 3rem; font-size: 0.75rem; opacity: 0.5; letter-spacing: 0.15em; text-transform: uppercase;">
-                Secure Checkout • 630+ Pages • 48 AI Prompts Included
-            </div>
+            <div style="margin-top: 3rem; font-size: 0.75rem; opacity: 0.5; letter-spacing: 0.15em; text-transform: uppercase;">Secure Checkout • 630+ Pages • 48 AI Prompts Included</div>
         </div>
     </section>
 
-    <!-- ════════════════ FOOTER ════════════════ -->
     <footer>
         <div class="container">
-            <!-- Lead Magnet CTA -->
             <div style="text-align: center; padding-bottom: 4rem; border-bottom: 1px solid #333; margin-bottom: 4rem;">
                 <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 1rem;">Not Ready Yet?</h3>
-                <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                    Start with The Desire Audit — a free framework for relationship clarity.
-                </p>
-                <a href="https://diamondself.co/desire-audit.html" 
-                   style="display: inline-block; padding: 1rem 2.5rem; background: transparent; color: var(--gold); border: 2px solid var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.85rem; transition: all 0.3s ease;"
-                   onmouseover="this.style.background='var(--gold)'; this.style.color='#1a1a1a';"
-                   onmouseout="this.style.background='transparent'; this.style.color='var(--gold)';">
-                    Get Free Audit
-                </a>
+                <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">Start with The Desire Audit — a free framework for relationship clarity.</p>
+                <a href="https://diamondself.co/desire-audit.html" style="display: inline-block; padding: 1rem 2.5rem; background: transparent; color: var(--gold); border: 2px solid var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.85rem; transition: all 0.3s ease;" onmouseover="this.style.background='var(--gold)'; this.style.color='#1a1a1a';" onmouseout="this.style.background='transparent'; this.style.color='var(--gold)';">Get Free Audit</a>
             </div>
-            
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand">DIAMOND SELF</div>
@@ -907,27 +528,24 @@ Please be kind but honest. I'm ready to see what I haven't been able to see alon
                 <div class="footer-nav">
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
-                    <a href="/cdn-cgi/l/email-protection#4e262b2222210e2a272f2321202a3d2b2228602d21">Contact</a>
+                    <a href="mailto:hello@diamondself.co">Contact</a>
                 </div>
             </div>
             <div class="legal-box">
                 © 2026 Diamond Self. All rights reserved.<br>
-                Legal Entity: Vlada Vinogradova • IIN: 850930051464 • Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="553d3039393a15313c34383a3b31263039337b363a">[email&#160;protected]</a><br>
+                Legal Entity: Vlada Vinogradova • IIN: 850930051464 • Email: hello@diamondself.co<br>
                 <span style="opacity: 0.7; font-size: 0.7rem;">This system is for educational purposes and does not constitute clinical therapy or medical advice.</span>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // FAQ Accordion
+    <script>
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const isActive = answer.classList.contains('active');
-                
                 document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
                 document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
-                
                 if (!isActive) {
                     answer.classList.add('active');
                     question.classList.add('active');
