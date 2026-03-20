@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 10: Financial Architecture - Practice Page | Diamond Self</title>
+    <meta name="description" content="Practice page for Module 10: Financial Architecture. Access your support materials for Phase 3: The Brilliance.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Cookie Consent Banner -->
+    <style>
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #2C3E50;
+      color: #F5F0E8;
+      padding: 1.5rem;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+    #cookie-banner.show {
+      display: block;
+    }
+    #cookie-banner p {
+      margin: 0 0 1rem 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    #cookie-banner-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    #cookie-banner button {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+    #cookie-accept {
+      background: #D4AF37;
+      color: #000;
+    }
+    #cookie-decline {
+      background: transparent;
+      color: #F5F0E8;
+      border: 1px solid #F5F0E8;
+    }
+    @media (max-width: 600px) {
+      #cookie-banner {
+        padding: 1rem;
+      }
+      #cookie-banner p {
+        font-size: 0.85rem;
+      }
+      #cookie-banner-buttons {
+        flex-direction: column;
+      }
+      #cookie-banner button {
+        width: 100%;
+      }
+    }
+    </style>
+
+    <script>
+    // Check if user has already made choice
+    if (!localStorage.getItem('cookieConsent')) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var banner = document.getElementById('cookie-banner');
+        if (banner) banner.classList.add('show');
+      });
+    }
+
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.classList.remove('show');
+      loadGoogleAnalytics();
+    }
+
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.classList.remove('show');
+    }
+
+    function loadGoogleAnalytics() {
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q2H6ETTTFS';
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Q2H6ETTTFS');
+        };
+      }
+    }
+
+    // Load GA if already consented
+    if (localStorage.getItem('cookieConsent') === 'accepted') {
+      loadGoogleAnalytics();
+    }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            padding: 60px 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .phase {
+            font-size: 13px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+        .module-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            color: #D4AF37;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #D4AF37;
+            color: #000;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .download-btn:hover {
+            background: #c49d2e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+        }
+        .info {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            color: #0F4C81;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: #D4AF37;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 13px;
+        }
+        .brand {
+            color: #D4AF37;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 30px;
+            }
+            .module-number {
+                font-size: 56px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner">
+  <p>We use cookies to understand how you interact with our site via Google Analytics. No personal data is collected without your consent. <a href="/privacy.html" style="color: #D4AF37; text-decoration: underline;">Privacy Policy</a></p>
+  <div id="cookie-banner-buttons">
+    <button id="cookie-accept" onclick="acceptCookies()">Accept</button>
+    <button id="cookie-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+
+    <div class="container">
+        <div class="phase">Phase 3: The Brilliance</div>
+        <div class="module-number">10</div>
+        <h1>Financial Architecture</h1>
+        <p class="subtitle">Practice Page for Module 10</p>
+        
+        <a href="M10.pdf" class="download-btn" download>Download Practice Page (PDF)</a>
+        
+        <p class="info">This practice page supports your integration of Module 10. Use it alongside your workbook as you progress through the system.</p>
+        
+        <a href="./" class="back-link">← Back to All Practice Pages</a>
+        
+        <div class="footer">
+            <span class="brand">Diamond Self</span> • Conscious Choice
+        </div>
+    </div>
+</body>
+</html>
