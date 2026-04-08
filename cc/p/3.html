@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,8 +140,123 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .hidden { display: none; }
     </style>
+    <!-- Cookie Consent Banner -->
+    <style>
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #2C3E50;
+      color: #F5F0E8;
+      padding: 1.5rem;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+    #cookie-banner.show {
+      display: block;
+    }
+    #cookie-banner p {
+      margin: 0 0 1rem 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    #cookie-banner-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    #cookie-banner button {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+    #cookie-accept {
+      background: #D4AF37;
+      color: #000;
+    }
+    #cookie-decline {
+      background: transparent;
+      color: #F5F0E8;
+      border: 1px solid #F5F0E8;
+    }
+    @media (max-width: 600px) {
+      #cookie-banner {
+        padding: 1rem;
+      }
+      #cookie-banner p {
+        font-size: 0.85rem;
+      }
+      #cookie-banner-buttons {
+        flex-direction: column;
+      }
+      #cookie-banner button {
+        width: 100%;
+      }
+    }
+    </style>
+
+    <script>
+    // Check if user has already made choice
+    if (!localStorage.getItem('cookieConsent')) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var banner = document.getElementById('cookie-banner');
+        if (banner) banner.classList.add('show');
+      });
+    }
+
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.classList.remove('show');
+      loadGoogleAnalytics();
+    }
+
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.classList.remove('show');
+    }
+
+    function loadGoogleAnalytics() {
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q2H6ETTTFS';
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Q2H6ETTTFS');
+        };
+      }
+    }
+
+    // Load GA if already consented
+    if (localStorage.getItem('cookieConsent') === 'accepted') {
+      loadGoogleAnalytics();
+    }
+    </script>
+
 </head>
 <body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner">
+  <p>We use cookies to understand how you interact with our site via Google Analytics. No personal data is collected without your consent. <a href="/privacy.html" style="color: #D4AF37; text-decoration: underline;">Privacy Policy</a></p>
+  <div id="cookie-banner-buttons">
+    <button id="cookie-accept" onclick="acceptCookies()">Accept</button>
+    <button id="cookie-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+
+
     <div class="container">
         <div id="icon" class="icon pending">📋</div>
         <h1 id="title">Preparing Your Prompt...</h1>
