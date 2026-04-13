@@ -78,15 +78,44 @@
             background: #f8f9fa;
             border-radius: 8px;
             padding: 20px;
+            cursor: text;
         }
         .prompt-box.visible { display: block; }
         .prompt-text {
-            font-size: 11px;
+            font-size: 12px;
             color: #555;
-            line-height: 1.8;
-            white-space: pre-wrap;
+            line-height: 1.9;
             font-family: 'Montserrat', sans-serif;
             user-select: all;
+            -webkit-user-select: all;
+        }
+        .para { margin-bottom: 10px; }
+        .hint { color: #999; font-style: italic; margin-bottom: 10px; }
+        .para:last-child, .hint:last-child { margin-bottom: 0; }
+        .hints {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #e8e2d6;
+            text-align: left;
+        }
+        .hints-title {
+            font-size: 11px;
+            color: #999;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        .hint-row {
+            font-size: 11px;
+            color: #aaa;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+        .hint-row span {
+            color: #888;
+            font-style: normal;
+            font-weight: 600;
         }
         .footer {
             margin-top: 30px;
@@ -110,8 +139,123 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .hidden { display: none; }
     </style>
+    <!-- Cookie Consent Banner -->
+    <style>
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #2C3E50;
+      color: #F5F0E8;
+      padding: 1.5rem;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+    #cookie-banner.show {
+      display: block;
+    }
+    #cookie-banner p {
+      margin: 0 0 1rem 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    #cookie-banner-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    #cookie-banner button {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+    #cookie-accept {
+      background: #D4AF37;
+      color: #000;
+    }
+    #cookie-decline {
+      background: transparent;
+      color: #F5F0E8;
+      border: 1px solid #F5F0E8;
+    }
+    @media (max-width: 600px) {
+      #cookie-banner {
+        padding: 1rem;
+      }
+      #cookie-banner p {
+        font-size: 0.85rem;
+      }
+      #cookie-banner-buttons {
+        flex-direction: column;
+      }
+      #cookie-banner button {
+        width: 100%;
+      }
+    }
+    </style>
+
+    <script>
+    // Check if user has already made choice
+    if (!localStorage.getItem('cookieConsent')) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var banner = document.getElementById('cookie-banner');
+        if (banner) banner.classList.add('show');
+      });
+    }
+
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.classList.remove('show');
+      loadGoogleAnalytics();
+    }
+
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.classList.remove('show');
+    }
+
+    function loadGoogleAnalytics() {
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q2H6ETTTFS';
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Q2H6ETTTFS');
+        };
+      }
+    }
+
+    // Load GA if already consented
+    if (localStorage.getItem('cookieConsent') === 'accepted') {
+      loadGoogleAnalytics();
+    }
+    </script>
+
 </head>
 <body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner">
+  <p>We use cookies to understand how you interact with our site via Google Analytics. No personal data is collected without your consent. <a href="/privacy.html" style="color: #D4AF37; text-decoration: underline;">Privacy Policy</a></p>
+  <div id="cookie-banner-buttons">
+    <button id="cookie-accept" onclick="acceptCookies()">Accept</button>
+    <button id="cookie-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+
+
     <div class="container">
         <div id="icon" class="icon pending">📋</div>
         <h1 id="title">Preparing Your Prompt...</h1>
@@ -123,41 +267,66 @@
         <button class="toggle-btn" onclick="togglePrompt()">
             <span id="toggleLabel">Show prompt ↓</span>
         </button>
-        <div id="promptBox" class="prompt-box">
-            <pre id="promptDisplay" class="prompt-text"></pre>
+
+        <div id="promptBox" class="prompt-box" onclick="selectAll()">
+            <div class="prompt-text" id="promptDisplay">
+                <div class="para">Create a</div>
+                <div class="hint">[Style]</div>
+                <div class="para">representing the feeling of</div>
+                <div class="hint">[Your Core Value]</div>
+                <div class="para">The atmosphere is:</div>
+                <div class="hint">[Vibe]</div>
+                <div class="para">Central metaphor:</div>
+                <div class="hint">[Symbol]</div>
+                <div class="para">Colors:</div>
+                <div class="hint">[Your Palette]</div>
+                <div class="para">High quality, symbolic, evocative.</div>
+            </div>
+
+            <div class="hints">
+                <div class="hints-title">Not sure what to write? Some words to consider:</div>
+                <div class="hint-row"><span>Style:</span> ethereal oil painting, soft impressionist, watercolor, digital art</div>
+                <div class="hint-row"><span>Vibe:</span> radiant and warm, still and vast, grounded and luminous</div>
+                <div class="hint-row"><span>Symbol:</span> lighthouse, blooming crystal, open horizon, diamond</div>
+                <div class="hint-row"><span>Palette:</span> gold and ivory, sapphire and white, deep green and rose</div>
+            </div>
         </div>
+
         <div class="footer">
             <span class="brand">Diamond Self</span> • Conscious Choice
         </div>
     </div>
 
     <script>
-        // ============================================================
-        // МЕНЯЙ ТОЛЬКО ЭТО — текст промпта между обратными кавычками
-        // ============================================================
-        const promptText = `I've been working on understanding my value, but I struggle to see it clearly because I'm so close to my own experience.
+        const promptText = `Create a
+[Style]
+representing the feeling of
+[Your Core Value]
 
-Here's my evidence:
+The atmosphere is:
+[Vibe]
 
-[paste your answers from Exercise 1: Surface vs. Substance]
+Central metaphor:
+[Symbol]
 
-[paste your answers from Exercise 2: Evidence of Brilliance]
+Colors:
+[Your Palette]
 
-After I share this, please:
-
-1. Identify the core qualities that appear consistently across these examples
-2. Reflect back the pattern of brilliance I might be missing or minimizing
-3. Tell me what kind of person would deeply appreciate these specific qualities
-4. Gently challenge me if you notice I'm dismissing or downplaying my own strengths
-
-Be direct, warm, and honest. I'm ready to see what's actually there.`;
-        // ============================================================
+High quality, symbolic, evocative.`;
 
         const icon = document.getElementById('icon');
         const title = document.getElementById('title');
         const message = document.getElementById('message');
         const copyButton = document.getElementById('copyButton');
-        document.getElementById('promptDisplay').textContent = promptText;
+
+        function selectAll() {
+            const el = document.getElementById('promptDisplay');
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
 
         async function tryAutoCopy() {
             try {
@@ -172,7 +341,7 @@ Be direct, warm, and honest. I'm ready to see what's actually there.`;
             icon.textContent = '✓';
             icon.className = 'icon success';
             title.textContent = 'Prompt Copied!';
-            message.innerHTML = 'The prompt is now in your clipboard.<br>Paste it into ChatGPT or Claude to continue.';
+            message.innerHTML = 'The prompt is now in your clipboard.<br>Paste it into ChatGPT, Midjourney,<br>or any AI image generator.';
             copyButton.classList.add('hidden');
         }
 
@@ -191,7 +360,12 @@ Be direct, warm, and honest. I'm ready to see what's actually there.`;
                 copyButton.className = 'copy-button copied';
                 setTimeout(() => { showSuccess(); }, 500);
             } catch (err) {
-                copyButton.textContent = 'Try Again';
+                copyButton.textContent = 'Select & copy manually ↓';
+                const box = document.getElementById('promptBox');
+                const label = document.getElementById('toggleLabel');
+                box.classList.add('visible');
+                label.textContent = 'Hide prompt ↑';
+                setTimeout(() => { selectAll(); }, 150);
             }
         });
 
