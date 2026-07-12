@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Self: Affiliate Program</title>
+
+    <meta name="description" content="Partner with Diamond Self. Earn 40% commission sharing a workbook built for pattern recognition and conscious relationship choice.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://diamondself.co/affiliate-program.html">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --champagne: #F5F0E8;
+            --sapphire: #1a365d;
+            --gold: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #8B7355 100%);
+            --graphite: #2C3E50;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--graphite); background-color: var(--white); line-height: 1.8; font-size: 18px; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.2; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        .hero { background: var(--sapphire); min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; color: var(--white); }
+        .brand-label { letter-spacing: 0.4em; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 2rem; color: var(--gold); }
+        h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); margin-bottom: 1rem; color: var(--white); }
+        .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.6rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9); max-width: 600px; }
+        section { padding: 6rem 0; }
+        h2 { font-size: 2.6rem; margin-bottom: 2.5rem; color: var(--sapphire); text-align: center; }
+        p { margin-bottom: 1.5rem; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .stat-card { background: var(--champagne); padding: 2.5rem 2rem; text-align: center; border-top: 3px solid var(--gold); }
+        .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--sapphire); font-weight: 600; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; }
+
+        .how-it-works { background: var(--champagne); }
+        .step { display: flex; align-items: flex-start; gap: 2rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .step-number { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); font-weight: 600; flex-shrink: 0; width: 60px; }
+        .step-text h3 { font-size: 1.4rem; color: var(--sapphire); margin-bottom: 0.5rem; }
+        .step-text p { font-size: 0.95rem; color: #555; margin-bottom: 0; }
+
+        .kit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .kit-card { padding: 2rem; border-left: 3px solid var(--gold); background: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+        .kit-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--sapphire); margin-bottom: 0.5rem; }
+        .kit-desc { font-size: 0.9rem; color: #666; margin-bottom: 0; }
+
+        .who-section { background: var(--sapphire); color: var(--white); }
+        .who-section h2 { color: var(--white); }
+        .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+        .who-item { border-left: 3px solid var(--gold); padding-left: 1.5rem; }
+        .who-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.5rem; }
+        .who-text { font-size: 0.9rem; opacity: 0.85; line-height: 1.6; }
+
+        .faq-section { background: var(--white); border-top: 1px solid var(--champagne); }
+        .faq-item { margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; border-bottom: 1px solid var(--champagne); }
+        .faq-question { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--sapphire); padding: 1.5rem 3rem 1.5rem 0; font-weight: 600; cursor: pointer; position: relative; }
+        .faq-question::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 2rem; color: var(--gold); font-weight: 300; }
+        .faq-question.active::after { content: '−'; }
+        .faq-answer { font-size: 0.95rem; line-height: 1.8; color: var(--graphite); max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; padding: 0; }
+        .faq-answer.active { max-height: 400px; padding: 0 0 2rem 0; }
+        .faq-answer strong { color: var(--sapphire); }
+
+        .cta-section { background: var(--sapphire); color: var(--white); text-align: center; padding: 8rem 2rem; }
+        .cta-section h2 { color: var(--white); }
+        .cta-button { display: inline-block; padding: 1.4rem 3.5rem; background: var(--gold-gradient); color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600; font-size: 0.9rem; transition: transform 0.3s ease; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
+        .cta-button:hover { transform: translateY(-4px); }
+
+        footer { background: #1a1a1a; color: #888; padding: 4rem 2rem 3rem; font-size: 0.85rem; text-align: center; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            h2 { font-size: 2rem; }
+            .step { flex-direction: column; gap: 0.5rem; }
+            .step-number { width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="brand-label">DIAMOND SELF</div>
+        <h1>Partner With Diamond Self</h1>
+        <div class="hero-subtitle">Share a workbook you'd recommend anyway. Earn 40% on every sale.</div>
+        <div style="font-size: 1.8rem; color: var(--gold);">◆</div>
+    </div>
+
+    <section>
+        <div class="container">
+            <p style="text-align: center; font-size: 1.15rem; max-width: 650px; margin: 0 auto;">If your audience is drawn to self-worth, pattern recognition, and conscious relationship choice — Diamond Self is built for the people who follow you.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Commission per sale</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$199</div>
+                    <div class="stat-label">Earned per referral</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Free</div>
+                    <div class="stat-label">Copy to try first</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-text">
+                    <h3>Try it first</h3>
+                    <p>Get a free copy of the workbook so you can genuinely speak to it — no promoting something you haven't seen.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-text">
+                    <h3>Get your link</h3>
+                    <p>Sign up through our affiliate portal and get a unique tracked link, ready to share anywhere.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-text">
+                    <h3>Share it your way</h3>
+                    <p>Post, pin, email, mention — however fits your audience. Use our templates or write your own.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">04</div>
+                <div class="step-text">
+                    <h3>Get paid</h3>
+                    <p>Earn 40% commission — about $199 — for every sale that comes through your link.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>What You Get</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 1rem;">Everything you need is ready-made — no extra work required.</p>
+
+            <div class="kit-grid">
+                <div class="kit-card">
+                    <div class="kit-title">Ready-to-post copy</div>
+                    <p class="kit-desc">Pre-written posts, captions, and an email template you can use as-is or adapt to your voice.</p>
+                </div>
+                <div class="kit-card">
+                    <div class="kit-title">Visual assets</div>
+                    <p class="kit-desc">Pins, square posts, and story-sized images designed to match the Diamond Self look.</p>
+                </div>
+                <div class="kit-card">
+                    <div class="kit-title">Your own link</div>
+                    <p class="kit-desc">A unique, trackable affiliate link so every sale is properly credited to you.</p>
+                </div>
+                <div class="kit-card">
+                    <div class="kit-title">Direct support</div>
+                    <p class="kit-desc">Questions about the product or your audience fit? Just reach out — no automated runaround.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="who-section">
+        <div class="container">
+            <h2>Good Fit If You're</h2>
+            <div class="who-grid">
+                <div class="who-item">
+                    <div class="who-title">A coach or therapist</div>
+                    <div class="who-text">With clients or followers interested in self-worth, boundaries, or relationship patterns.</div>
+                </div>
+                <div class="who-item">
+                    <div class="who-title">A content creator</div>
+                    <div class="who-text">Whose audience already engages with self-development, confidence, or conscious living topics.</div>
+                </div>
+                <div class="who-item">
+                    <div class="who-title">Someone who believes in the work</div>
+                    <div class="who-text">You don't need a huge following — you need an audience that trusts what you share.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How much can I earn?</div>
+                <div class="faq-answer">You earn <strong>40% commission</strong> on every sale made through your link — about <strong>$199 per sale</strong>, since the workbook is $497.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I need a large following?</div>
+                <div class="faq-answer"><strong>No.</strong> What matters most is that your audience trusts your recommendations, regardless of size.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I have to buy the workbook myself?</div>
+                <div class="faq-answer"><strong>No.</strong> You'll receive a free copy to review before you share anything, so you can speak to it honestly.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How and when do I get paid?</div>
+                <div class="faq-answer">Payouts are handled through our affiliate platform once you're approved and sales come through your link. Full details are provided at signup.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I change the wording of the templates?</div>
+                <div class="faq-answer"><strong>Yes.</strong> Adapt them to your voice freely — just keep the core promise accurate to what the workbook actually offers.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="brand-label" style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">READY TO PARTNER?</div>
+            <h2>Join the Diamond Self Affiliate Program</h2>
+            <p style="opacity: 0.85; margin-bottom: 3rem; max-width: 550px; margin-left: auto; margin-right: auto;">Sign up, get your free copy, and start sharing something you actually believe in.</p>
+            <a href="https://diamondself.lemonsqueezy.com/affiliates" class="cta-button">Become an Affiliate</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>DIAMOND SELF &middot; <a href="mailto:hello@diamondself.co">hello@diamondself.co</a></p>
+        <p style="margin-top: 0.5rem; opacity: 0.6;">© 2026 Diamond Self. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = answer.classList.contains('active');
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                if (!isActive) {
+                    answer.classList.add('active');
+                    question.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
