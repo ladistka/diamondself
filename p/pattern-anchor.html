@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pattern Check — Visual Anchor Prompt</title>
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --champagne: #F5F0E8;
+            --sapphire: #1a365d;
+            --gold: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #8B7355 100%);
+            --graphite: #2C3E50;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--graphite);
+            background: var(--sapphire);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1.5rem;
+            line-height: 1.8;
+        }
+        .container { max-width: 700px; width: 100%; }
+        .brand-label {
+            text-align: center;
+            letter-spacing: 0.4em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+        .subtitle {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 3rem;
+        }
+        .prompt-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .prompt-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .prompt-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--sapphire);
+        }
+        #copy-btn {
+            background: var(--gold);
+            color: var(--sapphire);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        #copy-btn:hover { background: var(--sapphire); color: var(--white); }
+        #prompt-text {
+            background: #F8F9FA;
+            padding: 1.75rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.92rem;
+            line-height: 1.9;
+            color: var(--graphite);
+            border-left: 3px solid var(--sapphire);
+            white-space: pre-wrap;
+        }
+        .usage-note {
+            margin-top: 1.75rem;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        .usage-note strong { color: var(--sapphire); }
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+        .footer-note a { color: var(--gold); text-decoration: none; }
+        .footer-note a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .prompt-card { padding: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="brand-label">DIAMOND SELF</div>
+        <h1>The Pattern Check</h1>
+        <p class="subtitle">A visual anchor for the shift you're making — copy into any AI image tool.</p>
+
+        <div class="prompt-card">
+            <div class="prompt-card-header">
+                <div class="prompt-title">The Visual Anchor Prompt</div>
+                <button id="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+            </div>
+            <div id="prompt-text">Create a symbolic image representing a shift I'm trying to make—away from an old pattern, toward something steadier.
+
+What I'm moving away from: [e.g., intensity, urgency, chasing]
+What I'm moving toward: [e.g., steadiness, calm, being met halfway]
+Visual metaphor: [e.g., an anchor instead of a current / solid ground instead of a wave]
+Color palette: [e.g., gold, sapphire blue, champagne, white]
+Style: High quality, symbolic, evocative.</div>
+        </div>
+
+        <p class="footer-note">Part of <a href="https://diamondself.co">The Pattern Check</a> — Diamond Self</p>
+    </div>
+
+    <script>
+        function copyPrompt() {
+            const promptText = document.getElementById('prompt-text').innerText;
+            const button = document.getElementById('copy-btn');
+            navigator.clipboard.writeText(promptText).then(() => {
+                const orig = button.innerText;
+                button.innerText = '✓ Copied!';
+                button.style.background = '#1a365d';
+                button.style.color = '#FFFFFF';
+                setTimeout(() => {
+                    button.innerText = orig;
+                    button.style.background = '';
+                    button.style.color = '';
+                }, 2000);
+            }).catch(() => {
+                button.innerText = '✗ Failed';
+                setTimeout(() => { button.innerText = 'Copy Prompt'; }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
