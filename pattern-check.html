@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pattern Check – Free Download | Diamond Self</title>
+    <meta name="description" content="An honest look at the relationship pattern you keep rebuilding. Three quiet questions, two AI prompts, under 10 minutes.">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+    <link rel="apple-touch-icon" href="/favicon-512.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Cookie Consent + Google Analytics -->
+    <style>
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: #2C3E50; color: #F5F0E8;
+      padding: 1.5rem; display: none; z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+    #cookie-banner.show { display: block; }
+    #cookie-banner p { margin: 0 0 1rem 0; font-size: 0.9rem; line-height: 1.5; }
+    #cookie-banner-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    #cookie-banner button { padding: 0.7rem 1.5rem; border: none; cursor: pointer; font-size: 0.9rem; font-weight: 600; border-radius: 2px; }
+    #cookie-accept { background: #D4AF37; color: #000; }
+    #cookie-decline { background: transparent; color: #F5F0E8; border: 1px solid #F5F0E8; }
+    @media (max-width: 600px) {
+      #cookie-banner-buttons { flex-direction: column; }
+      #cookie-banner button { width: 100%; }
+    }
+    </style>
+    <script>
+    if (!localStorage.getItem('cookieConsent')) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var b = document.getElementById('cookie-banner');
+        if (b) b.classList.add('show');
+      });
+    }
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookie-banner').classList.remove('show');
+      loadGA();
+    }
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      document.getElementById('cookie-banner').classList.remove('show');
+    }
+    function loadGA() {
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q2H6ETTTFS';
+        document.head.appendChild(s);
+        s.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Q2H6ETTTFS');
+        };
+      }
+    }
+    if (localStorage.getItem('cookieConsent') === 'accepted') { loadGA(); }
+    </script>
+    <!-- End Cookie Consent + GA -->
+
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --champagne: #F5F0E8;
+            --sapphire: #1a365d;
+            --gold: #D4AF37;
+            --graphite: #2C3E50;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--graphite); background-color: var(--white); line-height: 1.8; font-size: 18px; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.2; }
+        .container { max-width: 700px; margin: 0 auto; padding: 0 2rem; }
+        .hero { background: var(--champagne); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; }
+        .brand-label { letter-spacing: 0.4em; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--gold); }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 0.5rem; color: var(--sapphire); }
+        .subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; margin-bottom: 2.5rem; color: var(--graphite); opacity: 0.9; }
+        .benefit { margin: 2rem 0; padding-left: 1.5rem; border-left: 3px solid var(--gold); font-size: 1.1rem; line-height: 1.6; }
+        .benefit strong { color: var(--sapphire); }
+        .form-section { background: var(--white); padding: 5rem 2rem; }
+        .form-container { background: var(--champagne); padding: 3rem; border: 3px solid var(--gold); border-radius: 2px; max-width: 550px; margin: 0 auto; }
+        .discover-section { padding: 5rem 2rem; background: var(--white); }
+        .discover-section h2 { font-size: 2.5rem; color: var(--sapphire); margin-bottom: 3rem; text-align: center; }
+        .discover-grid { display: grid; gap: 2rem; margin-top: 3rem; }
+        .discover-item { padding: 2rem; border-left: 3px solid var(--gold); background: var(--champagne); }
+        .discover-item h3 { font-size: 1.3rem; color: var(--sapphire); margin-bottom: 0.8rem; }
+        .discover-item p { font-size: 0.95rem; line-height: 1.6; opacity: 0.9; }
+        .pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; text-align: center; color: var(--gold); padding: 4rem 2rem; border-top: 1px solid var(--champagne); border-bottom: 1px solid var(--champagne); margin: 4rem 0; }
+        footer { background: var(--sapphire); color: var(--white); padding: 3rem 2rem 2rem; text-align: center; }
+        footer a { color: var(--gold); text-decoration: none; margin: 0 1rem; font-size: 0.9rem; }
+        footer a:hover { text-decoration: underline; }
+        .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.2em; margin-bottom: 1rem; color: var(--gold); }
+        @media (max-width: 768px) { h1 { font-size: 2rem; } .subtitle { font-size: 1.1rem; } .form-container { padding: 2rem 1.5rem; } }
+
+        /* MailerLite embedded form styling (matches brand) */
+        #mlb2-44381250.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; width: 100% !important; }
+        #mlb2-44381250 h4 { color: #1a365d; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; margin: 0 0 10px 0; text-align: center; }
+        #mlb2-44381250 .ml-form-embedContent p { color: #333; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; text-align: center; margin: 0 0 1.5rem 0; }
+        #mlb2-44381250 .ml-form-fieldRow input {
+            background: #ffffff; color: #333; border: 1px solid #ccc; border-radius: 4px;
+            font-family: 'Montserrat', sans-serif; font-size: 1rem; padding: 12px 14px; width: 100%; box-sizing: border-box; margin-bottom: 1rem;
+        }
+        #mlb2-44381250 .ml-form-embedSubmit button {
+            background: var(--gold); border: none; border-radius: 4px; color: #fff; cursor: pointer;
+            font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.05em; padding: 14px; width: 100%;
+        }
+        #mlb2-44381250 .ml-form-embedSubmit button:hover { background: #B8941F; }
+        #mlb2-44381250 .ml-form-successBody h4 { color: var(--sapphire); }
+        #mlb2-44381250 .ml-form-successBody p { text-align: center; }
+    </style>
+
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2046746');
+    </script>
+</head>
+<body>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner">
+  <p>We use Google Analytics to understand how visitors use our site. No personal data is collected without your consent. <a href="/privacy.html" style="color: #D4AF37;">Privacy Policy</a></p>
+  <div id="cookie-banner-buttons">
+    <button id="cookie-accept" onclick="acceptCookies()">Accept</button>
+    <button id="cookie-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+
+
+    <section class="hero">
+        <div class="container">
+            <div class="brand-label">DIAMOND SELF ARCHITECTURE</div>
+            <h1>The Pattern Check</h1>
+            <p class="subtitle">An Honest Look at What Keeps Repeating</p>
+            <div class="benefit">
+                <p>You've probably felt it before, in passing—<br>a flicker of "wait, haven't I been here before?"</p>
+            </div>
+            <p style="max-width: 600px; margin: 2rem auto 0;">It's easy to explain away in the moment. Different person, different city, different circumstances. Surely it's not the same thing.</p>
+            <p style="max-width: 600px; margin: 1.5rem auto 0;"><strong style="color: var(--sapphire);">But sometimes it is</strong>—not because you keep choosing badly, but because no one ever taught you how to notice the shape while you're still inside it.</p>
+            <p style="max-width: 600px; margin: 1.5rem auto 0; font-size: 1.05rem;">This is a <strong>short reflection</strong>—three honest questions to see it clearly, in under 10 minutes.</p>
+            <p style="max-width: 600px; margin: 1rem auto 3rem; font-size: 1rem; color: var(--gold); font-weight: 600;">+ Includes 2 AI prompts: one for reflection, one for a visual anchor</p>
+            <a href="#get-pattern-check" style="display: inline-block; padding: 1rem 3rem; background: var(--gold); color: white; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.3s;">Get The Pattern Check</a>
+        </div>
+    </section>
+
+    <section class="discover-section">
+        <div class="container">
+            <h2>What You'll Discover</h2>
+            <div class="discover-grid">
+                <div class="discover-item">
+                    <h3>◆ Three Quiet Questions</h3>
+                    <p>How did it begin. Where did you go quiet. How does the ending compare. Three honest questions applied to your last two relationships.</p>
+                </div>
+                <div class="discover-item" style="background: linear-gradient(135deg, #F5F0E8 0%, #fff 100%); border-left: 4px solid var(--gold);">
+                    <h3>◆ Two AI Prompts</h3>
+                    <p><strong>Reflection Prompt:</strong> An honest second read on what keeps repeating.<br>
+                    <strong>Visual Anchor Prompt:</strong> A symbolic image for the shift you're making.<br>
+                    Copy-paste ready for Claude, ChatGPT, or any AI.</p>
+                </div>
+                <div class="discover-item">
+                    <h3>◆ Not a Verdict, a Weather Pattern</h3>
+                    <p>This isn't about judging who was right or wrong for you. It's about finally noticing which direction things keep coming from.</p>
+                </div>
+                <div class="discover-item">
+                    <h3>◆ What Usually Happens Next</h3>
+                    <p>Noticing the pattern is the easier part. What tends to shift once you actually see it clearly—and what it costs when you don't.</p>
+                </div>
+                <div class="discover-item">
+                    <h3>◆ Practical, Not Theoretical</h3>
+                    <p>Something you can sit with today, using your own last two relationships—not abstract theory about relationships in general.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="pull-quote">
+        <div class="container">
+            "It's closer to reading a weather pattern.<br>You're not judging the rain."
+        </div>
+    </div>
+
+    <section style="background: var(--white); padding: 5rem 2rem;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.2rem; color: var(--sapphire); margin-bottom: 2rem;">Two AI-Enhanced Tools Inside</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.05rem;">The Pattern Check includes two custom AI prompts that take your reflection further.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; max-width: 900px; margin: 0 auto;">
+                <div style="background: var(--champagne); padding: 2rem; border-left: 4px solid var(--gold);">
+                    <h3 style="font-size: 1.4rem; color: var(--sapphire); margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif;">1. The Reflection Prompt</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">You describe your last two relationships, paste into AI, and get an honest second read on:</p>
+                    <ul style="font-size: 0.9rem; line-height: 1.7; margin-left: 1.5rem;">
+                        <li>What keeps repeating that you might be calling "chemistry"</li>
+                        <li>Where you go quiet about your own needs</li>
+                        <li>What your first reactions were actually telling you</li>
+                        <li>What a recalibrated choice might look like</li>
+                    </ul>
+                </div>
+                <div style="background: var(--champagne); padding: 2rem; border-left: 4px solid var(--gold);">
+                    <h3 style="font-size: 1.4rem; color: var(--sapphire); margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif;">2. The Visual Anchor Prompt</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">Generate a symbolic image representing the shift you're making. Use it as:</p>
+                    <ul style="font-size: 0.9rem; line-height: 1.7; margin-left: 1.5rem;">
+                        <li>Phone lock screen</li>
+                        <li>Visual reminder when old chemistry resurfaces</li>
+                        <li>Anchor before you compromise again</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; font-style: italic; color: #666;">Works with any AI image generator (Claude, ChatGPT, Midjourney, etc.)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="get-pattern-check">
+        <div class="container">
+            <div class="form-container">
+                <div id="mlb2-44381250" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-44381250">
+                  <div class="ml-form-align-center">
+                    <div class="ml-form-embedWrapper embedForm">
+                      <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                        <div class="ml-form-embedContent" style=" ">
+                          <h4>Get Your Free Pattern Check</h4>
+                          <p>Free PDF + 2 AI prompts to help you see what you can't see alone</p>
+                        </div>
+                        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2046746/forms/194609331997509074/subscribe" data-code="" method="post" target="_blank">
+                          <div class="ml-form-formContent">
+                            <div class="ml-form-fieldRow ml-last-item">
+                              <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                              </div>
+                            </div>
+                          </div>
+                          <input type="hidden" name="ml-submit" value="1">
+                          <div class="ml-form-embedSubmit">
+                            <button type="submit" class="primary">Get Free PDF</button>
+                            <button disabled="disabled" style="display: none;" type="button" class="loading">
+                              <div class="ml-form-embedSubmitLoad"></div>
+                              <span class="sr-only">Loading...</span>
+                            </button>
+                          </div>
+                          <input type="hidden" name="anticsrf" value="true">
+                        </form>
+                      </div>
+                      <div class="ml-form-successBody row-success" style="display: none">
+                        <div class="ml-form-successContent">
+                          <h4>Thank you!</h4>
+                          <p>Check your email for The Pattern Check PDF.<br><br>It should arrive within 2 minutes. If you don't see it, check your spam folder.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--sapphire); color: var(--white); padding: 5rem 2rem;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: var(--white); margin-bottom: 2rem;">This Is For You If...</h2>
+            <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+                <p style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--gold);">You've noticed the same relationship happening more than once</p>
+                <p style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--gold);">You're tired of calling it "bad luck"</p>
+                <p style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--gold);">You want to see the pattern before month three, not after year three</p>
+                <p style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--gold);">You're done with surface-level advice and ready for an honest look</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--white); padding: 5rem 2rem;">
+        <div class="container" style="text-align: center;">
+            <h2 style="margin-bottom: 2rem;">About Diamond Self</h2>
+            <p style="max-width: 650px; margin: 0 auto 2rem; line-height: 1.8;">Diamond Self is a systemic methodology for those who require intellectual coherence in their personal lives. Created by <strong>Vlada Vinogradova</strong>, the system combines clear structure with AI-enhanced insight to replace confusion with clarity.</p>
+            <p style="max-width: 650px; margin: 0 auto 1.5rem; font-size: 0.95rem; color: #666;">The full <strong>Diamond Self: Conscious Choice</strong> workbook goes further—rebuilding the selection criteria itself, not just naming the pattern.</p>
+            <p style="max-width: 650px; margin: 0 auto; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold);">Not self-help. Self-clarity.</p>
+            <div style="margin-top: 3rem;">
+                <a href="index.html" style="display: inline-block; padding: 1rem 2rem; border: 2px solid var(--sapphire); color: var(--sapphire); text-decoration: none; font-weight: 600; transition: all 0.3s;">Explore Diamond Self: Conscious Choice</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-brand">DIAMOND SELF</div>
+            <p style="margin-bottom: 2rem; opacity: 0.8; font-size: 0.9rem;">Systemic methodology for those who require<br>intellectual coherence in their personal life.</p>
+            <div>
+                <a href="index.html">Diamond Self: Conscious Choice</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">© 2026 Diamond Self. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    function ml_webform_success_44381250() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-44381250 .row-success').show();
+      $('.ml-subscribe-form-44381250 .row-form').hide();
+    }
+    </script>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+    <script>
+        fetch("https://assets.mailerlite.com/jsonp/2046746/forms/194609331997509074/takel")
+    </script>
+
+</body>
+</html>
